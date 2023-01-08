@@ -1,0 +1,155 @@
+info:
+  contact: {}
+paths:
+  /capacha/get:
+    get:
+      responses:
+        "200":
+          description: code", "msg", "data", "total"}
+          schema:
+            type: string
+      summary: 获取验证码
+      tags:
+      - 登录业务接口
+  /capacha/verify:
+    get:
+      parameters:
+      - description: capachaId
+        in: query
+        name: capachaId
+        required: true
+        type: string
+      - description: capachaVal
+        in: query
+        name: capachaVal
+        required: true
+        type: string
+      responses:
+        "200":
+          description: code", "msg", "data", "total"}
+          schema:
+            type: string
+      summary: 验证验证码
+      tags:
+      - 登录业务接口
+  /forgetPassword/modifyPassword:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: username email password repassword
+        in: body
+        name: object
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: code", "msg", "data", "total"}
+          schema:
+            type: string
+      summary: 密码修改
+      tags:
+      - 登录业务接口
+  /forgetPassword/verifyEmailCode:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: email code
+        in: body
+        name: object
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: code", "msg", "data", "total"}
+          schema:
+            type: string
+      summary: 忘记密码-验证验证码
+      tags:
+      - 登录业务接口
+  /hello:
+    get:
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: 首页
+      tags:
+      - 公共方法
+  /login:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: username password repassword
+        in: body
+        name: object
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: code", "msg", "data", "total"}
+          schema:
+            type: string
+      summary: 用户登录
+      tags:
+      - 登录业务接口
+  /register:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: username email code password repassword
+        in: body
+        name: object
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: code", "msg", "data", "total"}
+          schema:
+            type: string
+      summary: 用户注册
+      tags:
+      - 登录业务接口
+  /sendEmailCode:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: email
+        in: body
+        name: object
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: code", "msg", "data", "total"}
+          schema:
+            type: string
+      summary: 发送邮件验证码
+      tags:
+      - 登录业务接口
+swagger: "2.0"

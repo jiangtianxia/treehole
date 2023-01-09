@@ -24,9 +24,9 @@ const docTemplate = `{
                 "summary": "获取验证码",
                 "responses": {
                     "200": {
-                        "description": "code\", \"msg\", \"data\", \"total\"}",
+                        "description": "OK",
                         "schema": {
-                            "type": "string"
+                            "$ref": "#/definitions/utils.H"
                         }
                     }
                 }
@@ -56,9 +56,9 @@ const docTemplate = `{
                 ],
                 "responses": {
                     "200": {
-                        "description": "code\", \"msg\", \"data\", \"total\"}",
+                        "description": "OK",
                         "schema": {
-                            "type": "string"
+                            "$ref": "#/definitions/utils.H"
                         }
                     }
                 }
@@ -85,20 +85,20 @@ const docTemplate = `{
                         "required": true
                     },
                     {
-                        "description": "username email password repassword",
+                        "description": "发送参数",
                         "name": "object",
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "type": "string"
+                            "$ref": "#/definitions/utils.ModifyPasswordForm"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "code\", \"msg\", \"data\", \"total\"}",
+                        "description": "OK",
                         "schema": {
-                            "type": "string"
+                            "$ref": "#/definitions/utils.H"
                         }
                     }
                 }
@@ -118,20 +118,20 @@ const docTemplate = `{
                 "summary": "忘记密码-验证验证码",
                 "parameters": [
                     {
-                        "description": "email code",
+                        "description": "发送参数",
                         "name": "object",
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "type": "string"
+                            "$ref": "#/definitions/utils.VerifyEmailCodeForm"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "code\", \"msg\", \"data\", \"total\"}",
+                        "description": "OK",
                         "schema": {
-                            "type": "string"
+                            "$ref": "#/definitions/utils.H"
                         }
                     }
                 }
@@ -140,7 +140,7 @@ const docTemplate = `{
         "/hello": {
             "get": {
                 "tags": [
-                    "公共方法"
+                    "公共接口"
                 ],
                 "summary": "首页",
                 "responses": {
@@ -167,20 +167,20 @@ const docTemplate = `{
                 "summary": "用户登录",
                 "parameters": [
                     {
-                        "description": "username password repassword",
+                        "description": "发送参数",
                         "name": "object",
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "type": "string"
+                            "$ref": "#/definitions/utils.LoginForm"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "code\", \"msg\", \"data\", \"total\"}",
+                        "description": "OK",
                         "schema": {
-                            "type": "string"
+                            "$ref": "#/definitions/utils.H"
                         }
                     }
                 }
@@ -200,20 +200,20 @@ const docTemplate = `{
                 "summary": "用户注册",
                 "parameters": [
                     {
-                        "description": "username email code password repassword",
+                        "description": "发送参数",
                         "name": "object",
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "type": "string"
+                            "$ref": "#/definitions/utils.RegisterForm"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "code\", \"msg\", \"data\", \"total\"}",
+                        "description": "OK",
                         "schema": {
-                            "type": "string"
+                            "$ref": "#/definitions/utils.H"
                         }
                     }
                 }
@@ -233,22 +233,320 @@ const docTemplate = `{
                 "summary": "发送邮件验证码",
                 "parameters": [
                     {
-                        "description": "email",
+                        "description": "发送参数",
                         "name": "object",
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "type": "string"
+                            "$ref": "#/definitions/utils.SendCodeForm"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "code\", \"msg\", \"data\", \"total\"}",
+                        "description": "OK",
                         "schema": {
-                            "type": "string"
+                            "$ref": "#/definitions/utils.H"
                         }
                     }
+                }
+            }
+        },
+        "/uploadLocal": {
+            "post": {
+                "tags": [
+                    "公共接口"
+                ],
+                "summary": "上传图片",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "file",
+                        "description": "文件",
+                        "name": "file",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "文件类型",
+                        "name": "type",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/utils.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/getUserInfo": {
+            "get": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "用户业务接口"
+                ],
+                "summary": "获取用户信息",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/utils.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/modifyUserInfo": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "用户业务接口"
+                ],
+                "summary": "修改用户信息",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "发送参数",
+                        "name": "object",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/utils.ModifyUserInfoForm"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/utils.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/userModifyPassword": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "用户业务接口"
+                ],
+                "summary": "更换密码",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "发送参数",
+                        "name": "object",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/utils.UserModifyPasswordForm"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/utils.H"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "utils.H": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer"
+                },
+                "data": {},
+                "msg": {
+                    "type": "string"
+                },
+                "total": {}
+            }
+        },
+        "utils.LoginForm": {
+            "type": "object",
+            "required": [
+                "password",
+                "repassword",
+                "username"
+            ],
+            "properties": {
+                "password": {
+                    "type": "string"
+                },
+                "repassword": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
+                }
+            }
+        },
+        "utils.ModifyPasswordForm": {
+            "type": "object",
+            "required": [
+                "password",
+                "repassword",
+                "username"
+            ],
+            "properties": {
+                "password": {
+                    "type": "string"
+                },
+                "repassword": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
+                }
+            }
+        },
+        "utils.ModifyUserInfoForm": {
+            "type": "object",
+            "required": [
+                "age",
+                "sex",
+                "url",
+                "username"
+            ],
+            "properties": {
+                "age": {
+                    "type": "string"
+                },
+                "sex": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
+                }
+            }
+        },
+        "utils.RegisterForm": {
+            "type": "object",
+            "required": [
+                "code",
+                "email",
+                "password",
+                "repassword",
+                "username"
+            ],
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "repassword": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
+                }
+            }
+        },
+        "utils.SendCodeForm": {
+            "type": "object",
+            "required": [
+                "email"
+            ],
+            "properties": {
+                "email": {
+                    "type": "string"
+                }
+            }
+        },
+        "utils.UserModifyPasswordForm": {
+            "type": "object",
+            "required": [
+                "nowpassword",
+                "password",
+                "repassword"
+            ],
+            "properties": {
+                "nowpassword": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "repassword": {
+                    "type": "string"
+                }
+            }
+        },
+        "utils.VerifyEmailCodeForm": {
+            "type": "object",
+            "required": [
+                "code",
+                "email"
+            ],
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
                 }
             }
         }

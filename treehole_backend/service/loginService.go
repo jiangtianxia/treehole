@@ -18,11 +18,11 @@ import (
 // @Tags 登录业务接口
 // @Accept application/json
 // @Produce application/json
-// @Param object body string true "email"
-// @Success 200 {string} json {"code", "msg", "data", "total"}
+// @Param object body utils.SendCodeForm true "发送参数"
+// @Success 200 {object} utils.H
 // @Router /sendEmailCode [post]
 func SendEmailCode(c *gin.Context) {
-	// 获取邮箱
+	// 1、获取邮箱
 	var user utils.SendCodeForm
 	if err := c.ShouldBindJSON(&user); err != nil {
 		// 获取valadtor.valiadtionErrors类型的errors
@@ -44,10 +44,10 @@ func SendEmailCode(c *gin.Context) {
 		return
 	}
 
-	// 获取验证码
+	// 2、获取验证码
 	rand := utils.GetRand(6)
 
-	// 发送验证码
+	// 3、发送验证码
 	err := utils.SendEmailCode(user.Email, rand)
 	if err != nil {
 		logger.SugarLogger.Error("Send Email Fail Error:", err.Error())
@@ -55,7 +55,7 @@ func SendEmailCode(c *gin.Context) {
 		return
 	}
 
-	// 将验证码存入redis，过期时间为5分钟
+	// 4、将验证码存入redis，过期时间为5分钟
 	err = utils.RDB.Set(c, user.Email, rand, time.Second*300).Err()
 	if err != nil {
 		logger.SugarLogger.Error("Set Redis Fail Error:", err.Error())
@@ -71,11 +71,11 @@ func SendEmailCode(c *gin.Context) {
 // @Tags 登录业务接口
 // @Accept application/json
 // @Produce application/json
-// @Param object body string true "username email code password repassword"
-// @Success 200 {string} json {"code", "msg", "data", "total"}
+// @Param object body utils.RegisterForm true "发送参数"
+// @Success 200 {object} utils.H
 // @Router /register [post]
 func Register(c *gin.Context) {
-	// 获取参数
+	// 1、获取参数
 	var user utils.RegisterForm
 	if err := c.ShouldBindJSON(&user); err != nil {
 		// 获取valadtor.valiadtionErrors类型的errors
@@ -97,7 +97,7 @@ func Register(c *gin.Context) {
 		return
 	}
 
-	// 验证验证码是否正确
+	// 2、验证验证码是否正确
 	sysCode, err := utils.RDB.Get(c, user.Email).Result()
 	if err != nil {
 		utils.RespFail(c, int(define.FailCode), "验证码已过期，请重新获取")
@@ -108,7 +108,7 @@ func Register(c *gin.Context) {
 		return
 	}
 
-	// 判断邮箱是否已存在
+	// 3、判断邮箱是否已存在
 	cnt, err := dao.FindUserByEmailCount(user.Email)
 	if cnt > 0 {
 		logger.SugarLogger.Error("Eamil Exist Error:" + user.Email)
@@ -121,7 +121,7 @@ func Register(c *gin.Context) {
 		return
 	}
 
-	// 判断用户名是否已经存在
+	// 4、判断用户名是否已经存在
 	cnt, err = dao.FindUserByNameCount(user.Username)
 	if cnt > 0 {
 		logger.SugarLogger.Error("Username Exist Error:" + user.Email)
@@ -134,7 +134,7 @@ func Register(c *gin.Context) {
 		return
 	}
 
-	// 生成identity和对密码加密，插入数据空间
+	// 3、生成identity和对密码加密，插入数据空间
 	// md5 对密码进行加密
 	password := utils.MakePassword(user.Password)
 	// 使用雪花算法生成identidy
@@ -152,7 +152,7 @@ func Register(c *gin.Context) {
 		Email:    user.Email,
 	}
 
-	// 创建用户
+	// 4、创建用户
 	err = dao.CreateUser(u)
 	if err != nil {
 		logger.SugarLogger.Error("create User Error:" + err.Error())
@@ -177,7 +177,7 @@ func Register(c *gin.Context) {
 // GetCapacha
 // @Summary 获取验证码
 // @Tags 登录业务接口
-// @Success 200 {string} json {"code", "msg", "data", "total"}
+// @Success 200 {object} utils.H
 // @Router /capacha/get [get]
 func GetCapacha(c *gin.Context) {
 	id, base64, err := utils.MakeCaptcha()
@@ -199,7 +199,7 @@ func GetCapacha(c *gin.Context) {
 // @Tags 登录业务接口
 // @Param capachaId query string true "capachaId"
 // @Param capachaVal query string true "capachaVal"
-// @Success 200 {string} json {"code", "msg", "data", "total"}
+// @Success 200 {object} utils.H
 // @Router /capacha/verify [get]
 func VerifyCapacha(c *gin.Context) {
 	id := c.DefaultQuery("capachaId", "")
@@ -220,8 +220,8 @@ func VerifyCapacha(c *gin.Context) {
 // @Tags 登录业务接口
 // @Accept application/json
 // @Produce application/json
-// @Param object body string true "username password repassword"
-// @Success 200 {string} json {"code", "msg", "data", "total"}
+// @Param object body utils.LoginForm true "发送参数"
+// @Success 200 {object} utils.H
 // @Router /login [post]
 func Login(c *gin.Context) {
 	// 1、获取参数
@@ -254,9 +254,15 @@ func Login(c *gin.Context) {
 		return
 	}
 
+	if u.Identity == "" {
+		logger.SugarLogger.Error("Invalid Password Or UserName")
+		utils.RespFail(c, int(define.InvalidPasswordCode), define.InvalidPasswordCode.Msg())
+		return
+	}
+
 	// 3、判断密码是否正确
 	if !utils.ValidPassword(user.Password, u.Password) {
-		logger.SugarLogger.Error("Search UserName Error:" + err.Error())
+		logger.SugarLogger.Error("Invalid Password")
 		utils.RespFail(c, int(define.InvalidPasswordCode), define.InvalidPasswordCode.Msg())
 		return
 	}
@@ -280,8 +286,8 @@ func Login(c *gin.Context) {
 // @Tags 登录业务接口
 // @Accept application/json
 // @Produce application/json
-// @Param object body string true "email code"
-// @Success 200 {string} json {"code", "msg", "data", "total"}
+// @Param object body utils.VerifyEmailCodeForm true "发送参数"
+// @Success 200 {object} utils.H
 // @Router /forgetPassword/verifyEmailCode [post]
 func VerifyEmailCode(c *gin.Context) {
 	// 1、获取参数
@@ -325,7 +331,7 @@ func VerifyEmailCode(c *gin.Context) {
 		return
 	}
 
-	// 生成token并返回
+	// 4、生成token并返回
 	token, err := utils.GenerateToken(u.Identity, u.Username)
 	if err != nil {
 		logger.SugarLogger.Error("Generate Token Error:" + err.Error())
@@ -345,8 +351,8 @@ func VerifyEmailCode(c *gin.Context) {
 // @Accept application/json
 // @Produce application/json
 // @Param Authorization header string true "Authorization"
-// @Param object body string true "username email password repassword"
-// @Success 200 {string} json {"code", "msg", "data", "total"}
+// @Param object body utils.ModifyPasswordForm true "发送参数"
+// @Success 200 {object} utils.H
 // @Router /forgetPassword/modifyPassword [post]
 func ModifyPassword(c *gin.Context) {
 	// 1、获取参数
@@ -382,11 +388,20 @@ func ModifyPassword(c *gin.Context) {
 		return
 	}
 
-	// 3、修改用户信息
+	if modify.Password == "" {
+		logger.SugarLogger.Error("FindByIdentity Error:" + err.Error())
+		utils.RespFail(c, int(define.FailCode), "修改失败")
+		return
+	}
+
+	// 3、使用md5对密码进行加密
+	Password := utils.MakePassword(user.Password)
+
+	// 4、修改用户信息
 	newUser := models.UserBasic{
 		Identity: modify.Identity,
 		Username: user.Username,
-		Password: user.Password,
+		Password: Password,
 		Email:    modify.Email,
 	}
 	err = dao.ModifyUserInfo(newUser)

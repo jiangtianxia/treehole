@@ -23,6 +23,7 @@ func main() {
 	}
 	fmt.Println("Snowflake inited ...... ")
 	logger.InitLogger()
+	defer logger.SugarLogger.Sync() // 刷新流，写日志到文件中
 	utils.InitMysql()
 	utils.InitRedis()
 	defer utils.ReidsClose()
@@ -31,5 +32,5 @@ func main() {
 	// 配置路由
 	r := router.Router()
 	logger.SugarLogger.Info("配置路由完成")
-	r.Run()
+	r.Run("127.0.0.1:8081")
 }

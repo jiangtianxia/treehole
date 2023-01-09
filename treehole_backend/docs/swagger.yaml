@@ -1,3 +1,104 @@
+definitions:
+  utils.H:
+    properties:
+      code:
+        type: integer
+      data: {}
+      msg:
+        type: string
+      total: {}
+    type: object
+  utils.LoginForm:
+    properties:
+      password:
+        type: string
+      repassword:
+        type: string
+      username:
+        type: string
+    required:
+    - password
+    - repassword
+    - username
+    type: object
+  utils.ModifyPasswordForm:
+    properties:
+      password:
+        type: string
+      repassword:
+        type: string
+      username:
+        type: string
+    required:
+    - password
+    - repassword
+    - username
+    type: object
+  utils.ModifyUserInfoForm:
+    properties:
+      age:
+        type: string
+      sex:
+        type: string
+      url:
+        type: string
+      username:
+        type: string
+    required:
+    - age
+    - sex
+    - url
+    - username
+    type: object
+  utils.RegisterForm:
+    properties:
+      code:
+        type: string
+      email:
+        type: string
+      password:
+        type: string
+      repassword:
+        type: string
+      username:
+        type: string
+    required:
+    - code
+    - email
+    - password
+    - repassword
+    - username
+    type: object
+  utils.SendCodeForm:
+    properties:
+      email:
+        type: string
+    required:
+    - email
+    type: object
+  utils.UserModifyPasswordForm:
+    properties:
+      nowpassword:
+        type: string
+      password:
+        type: string
+      repassword:
+        type: string
+    required:
+    - nowpassword
+    - password
+    - repassword
+    type: object
+  utils.VerifyEmailCodeForm:
+    properties:
+      code:
+        type: string
+      email:
+        type: string
+    required:
+    - code
+    - email
+    type: object
 info:
   contact: {}
 paths:
@@ -5,9 +106,9 @@ paths:
     get:
       responses:
         "200":
-          description: code", "msg", "data", "total"}
+          description: OK
           schema:
-            type: string
+            $ref: '#/definitions/utils.H'
       summary: 获取验证码
       tags:
       - 登录业务接口
@@ -26,9 +127,9 @@ paths:
         type: string
       responses:
         "200":
-          description: code", "msg", "data", "total"}
+          description: OK
           schema:
-            type: string
+            $ref: '#/definitions/utils.H'
       summary: 验证验证码
       tags:
       - 登录业务接口
@@ -42,19 +143,19 @@ paths:
         name: Authorization
         required: true
         type: string
-      - description: username email password repassword
+      - description: 发送参数
         in: body
         name: object
         required: true
         schema:
-          type: string
+          $ref: '#/definitions/utils.ModifyPasswordForm'
       produces:
       - application/json
       responses:
         "200":
-          description: code", "msg", "data", "total"}
+          description: OK
           schema:
-            type: string
+            $ref: '#/definitions/utils.H'
       summary: 密码修改
       tags:
       - 登录业务接口
@@ -63,19 +164,19 @@ paths:
       consumes:
       - application/json
       parameters:
-      - description: email code
+      - description: 发送参数
         in: body
         name: object
         required: true
         schema:
-          type: string
+          $ref: '#/definitions/utils.VerifyEmailCodeForm'
       produces:
       - application/json
       responses:
         "200":
-          description: code", "msg", "data", "total"}
+          description: OK
           schema:
-            type: string
+            $ref: '#/definitions/utils.H'
       summary: 忘记密码-验证验证码
       tags:
       - 登录业务接口
@@ -88,25 +189,25 @@ paths:
             type: string
       summary: 首页
       tags:
-      - 公共方法
+      - 公共接口
   /login:
     post:
       consumes:
       - application/json
       parameters:
-      - description: username password repassword
+      - description: 发送参数
         in: body
         name: object
         required: true
         schema:
-          type: string
+          $ref: '#/definitions/utils.LoginForm'
       produces:
       - application/json
       responses:
         "200":
-          description: code", "msg", "data", "total"}
+          description: OK
           schema:
-            type: string
+            $ref: '#/definitions/utils.H'
       summary: 用户登录
       tags:
       - 登录业务接口
@@ -115,19 +216,19 @@ paths:
       consumes:
       - application/json
       parameters:
-      - description: username email code password repassword
+      - description: 发送参数
         in: body
         name: object
         required: true
         schema:
-          type: string
+          $ref: '#/definitions/utils.RegisterForm'
       produces:
       - application/json
       responses:
         "200":
-          description: code", "msg", "data", "total"}
+          description: OK
           schema:
-            type: string
+            $ref: '#/definitions/utils.H'
       summary: 用户注册
       tags:
       - 登录业务接口
@@ -136,20 +237,118 @@ paths:
       consumes:
       - application/json
       parameters:
-      - description: email
+      - description: 发送参数
         in: body
         name: object
         required: true
         schema:
-          type: string
+          $ref: '#/definitions/utils.SendCodeForm'
       produces:
       - application/json
       responses:
         "200":
-          description: code", "msg", "data", "total"}
+          description: OK
           schema:
-            type: string
+            $ref: '#/definitions/utils.H'
       summary: 发送邮件验证码
       tags:
       - 登录业务接口
+  /uploadLocal:
+    post:
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: 文件
+        in: formData
+        name: file
+        required: true
+        type: file
+      - description: 文件类型
+        in: formData
+        name: type
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/utils.H'
+      summary: 上传图片
+      tags:
+      - 公共接口
+  /user/getUserInfo:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/utils.H'
+      summary: 获取用户信息
+      tags:
+      - 用户业务接口
+  /user/modifyUserInfo:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: 发送参数
+        in: body
+        name: object
+        required: true
+        schema:
+          $ref: '#/definitions/utils.ModifyUserInfoForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/utils.H'
+      summary: 修改用户信息
+      tags:
+      - 用户业务接口
+  /user/userModifyPassword:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: 发送参数
+        in: body
+        name: object
+        required: true
+        schema:
+          $ref: '#/definitions/utils.UserModifyPasswordForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/utils.H'
+      summary: 更换密码
+      tags:
+      - 用户业务接口
 swagger: "2.0"

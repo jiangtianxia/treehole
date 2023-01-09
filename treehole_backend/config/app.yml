@@ -1,4 +1,6 @@
 
+uplaodBase: "./upload/"
+
 logger: 
   path: "/log"
 

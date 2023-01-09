@@ -12,6 +12,7 @@ require (
 	github.com/jordan-wright/email v4.0.1-0.20210109023952-943e75fe5223+incompatible // indirect
 	github.com/mattn/go-sqlite3 v1.14.15 // indirect
 	github.com/mojocn/base64Captcha v1.3.5 // indirect
+	github.com/natefinch/lumberjack v2.0.0+incompatible // indirect
 	github.com/sony/sonyflake v1.1.0 // indirect
 	golang.org/x/image v0.3.0 // indirect
 )

@@ -1,3 +1,0 @@
-2023-01-08T23:57:01.249+0800	[34mINFO[0m	logger/init.go:25	logger inited
-2023-01-08T23:57:01.259+0800	[34mINFO[0m	treehole_backend/main.go:29	初始化配置完成
-2023-01-08T23:57:01.260+0800	[34mINFO[0m	treehole_backend/main.go:33	配置路由完成

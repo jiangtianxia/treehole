@@ -1,8 +1,8 @@
 package middlewares
 
 import (
-	"fmt"
 	"time"
+	"treehole/dao"
 	"treehole/define"
 	"treehole/logger"
 	"treehole/utils"
@@ -36,8 +36,8 @@ func AuthUserCheck() gin.HandlerFunc {
 		}
 
 		// 判断token是否过期
-		fmt.Println("TOKEN:", userClaim.ExpiresAt)
-		fmt.Println("now ", time.Now().Unix())
+		// fmt.Println("TOKEN:", userClaim.ExpiresAt)
+		// fmt.Println("now ", time.Now().Unix())
 		if time.Now().Unix() > userClaim.ExpiresAt {
 			ctx.Abort()
 			logger.SugarLogger.Error("Token Expired")
@@ -45,6 +45,20 @@ func AuthUserCheck() gin.HandlerFunc {
 			return
 		}
 
+		// 判断是否存在该用户
+		cnt, err := dao.FindUserByIdentityCount(userClaim.Identity)
+		if err != nil {
+			ctx.Abort()
+			logger.SugarLogger.Error("User Invalid", userClaim)
+			utils.RespFail(ctx, int(define.InvalidTokenCode), define.InvalidTokenCode.Msg())
+			return
+		}
+		if cnt <= 0 {
+			ctx.Abort()
+			logger.SugarLogger.Error("User Invalid", userClaim)
+			utils.RespFail(ctx, int(define.InvalidTokenCode), define.InvalidTokenCode.Msg())
+			return
+		}
 		ctx.Set("user_claims", userClaim)
 		ctx.Next()
 	}

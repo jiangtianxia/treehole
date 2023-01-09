@@ -1,0 +1,57 @@
+2023-01-09T20:27:22.815+0800	INFO	treehole_backend/main.go:30	初始化配置完成
+2023-01-09T20:27:22.817+0800	INFO	treehole_backend/main.go:34	配置路由完成
+2023-01-09T20:28:27.357+0800	ERROR	service/loginService.go:244	Params InvalidRePassword为必填字段,Password为必填字段,
+2023-01-09T20:28:43.881+0800	ERROR	middlewares/authUser.go:26	Unauthorized Authorization
+2023-01-09T20:28:59.326+0800	ERROR	service/userService.go:123	FindImageByIdentity Error:Error 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') AND `image_basic`.`deleted_at` IS NULL' at line 1username:test
+2023-01-09T20:30:36.443+0800	INFO	treehole_backend/main.go:30	初始化配置完成
+2023-01-09T20:30:36.484+0800	INFO	treehole_backend/main.go:34	配置路由完成
+2023-01-09T20:32:12.039+0800	INFO	treehole_backend/main.go:30	初始化配置完成
+2023-01-09T20:32:12.072+0800	INFO	treehole_backend/main.go:34	配置路由完成
+2023-01-09T20:33:42.683+0800	ERROR	service/userService.go:85	FindUserByName Error:record not foundusername:测试
+2023-01-09T20:35:46.227+0800	INFO	treehole_backend/main.go:30	初始化配置完成
+2023-01-09T20:35:46.229+0800	INFO	treehole_backend/main.go:34	配置路由完成
+2023-01-09T20:37:52.848+0800	ERROR	service/userService.go:85	FindUserByName Error:record not foundusername:测试
+2023-01-09T20:54:53.030+0800	INFO	treehole_backend/main.go:30	初始化配置完成
+2023-01-09T20:54:53.031+0800	INFO	treehole_backend/main.go:34	配置路由完成
+2023-01-09T20:55:02.337+0800	INFO	treehole_backend/main.go:30	初始化配置完成
+2023-01-09T20:55:02.339+0800	INFO	treehole_backend/main.go:34	配置路由完成
+2023-01-09T20:59:23.410+0800	INFO	treehole_backend/main.go:30	初始化配置完成
+2023-01-09T20:59:23.411+0800	INFO	treehole_backend/main.go:34	配置路由完成
+2023-01-09T20:59:27.491+0800	ERROR	service/userService.go:133	DeleteImages Error:WHERE conditions requiredusername:测试
+2023-01-09T21:21:37.097+0800	INFO	treehole_backend/main.go:30	初始化配置完成
+2023-01-09T21:21:37.103+0800	INFO	treehole_backend/main.go:34	配置路由完成
+2023-01-09T21:23:31.201+0800	INFO	treehole_backend/main.go:30	初始化配置完成
+2023-01-09T21:23:31.203+0800	INFO	treehole_backend/main.go:34	配置路由完成
+2023-01-09T21:23:33.907+0800	INFO	treehole_backend/main.go:30	初始化配置完成
+2023-01-09T21:23:33.908+0800	INFO	treehole_backend/main.go:34	配置路由完成
+2023-01-09T21:23:49.203+0800	INFO	treehole_backend/main.go:30	初始化配置完成
+2023-01-09T21:23:49.204+0800	INFO	treehole_backend/main.go:34	配置路由完成
+2023-01-09T21:24:02.120+0800	INFO	treehole_backend/main.go:30	初始化配置完成
+2023-01-09T21:24:02.121+0800	INFO	treehole_backend/main.go:34	配置路由完成
+2023-01-09T21:24:28.157+0800	ERROR	service/userService.go:201	Invalid Password
+2023-01-09T21:24:39.496+0800	ERROR	service/userService.go:201	Invalid Password
+2023-01-09T21:25:11.904+0800	ERROR	service/loginService.go:265	Invalid Password
+2023-01-09T21:25:19.961+0800	ERROR	service/loginService.go:265	Invalid Password
+2023-01-09T21:25:55.599+0800	ERROR	service/loginService.go:265	Invalid Password
+2023-01-09T21:28:56.054+0800	ERROR	service/loginService.go:265	Invalid Password
+2023-01-09T21:31:49.339+0800	INFO	treehole_backend/main.go:30	初始化配置完成
+2023-01-09T21:31:49.340+0800	INFO	treehole_backend/main.go:34	配置路由完成
+2023-01-09T21:31:59.632+0800	INFO	treehole_backend/main.go:30	初始化配置完成
+2023-01-09T21:31:59.635+0800	INFO	treehole_backend/main.go:34	配置路由完成
+2023-01-09T21:33:08.759+0800	ERROR	service/loginService.go:114	Eamil Exist Error:2381385276@qq.com
+2023-01-09T21:34:39.175+0800	ERROR	service/loginService.go:265	Invalid Password
+2023-01-09T21:37:20.028+0800	INFO	treehole_backend/main.go:30	初始化配置完成
+2023-01-09T21:37:20.028+0800	INFO	treehole_backend/main.go:34	配置路由完成
+2023-01-09T21:38:30.114+0800	INFO	treehole_backend/main.go:30	初始化配置完成
+2023-01-09T21:38:30.115+0800	INFO	treehole_backend/main.go:34	配置路由完成
+2023-01-09T21:39:48.353+0800	ERROR	service/loginService.go:114	Eamil Exist Error:2381385276@qq.com
+2023-01-09T21:43:15.414+0800	INFO	treehole_backend/main.go:30	初始化配置完成
+2023-01-09T21:43:15.416+0800	INFO	treehole_backend/main.go:34	配置路由完成
+2023-01-09T21:44:49.011+0800	ERROR	service/userService.go:188	Search UserName Error:record not found
+2023-01-09T21:46:20.470+0800	INFO	treehole_backend/main.go:30	初始化配置完成
+2023-01-09T21:46:20.471+0800	INFO	treehole_backend/main.go:34	配置路由完成
+2023-01-09T21:46:55.169+0800	ERROR	service/userService.go:188	Search UserName Error:record not found
+2023-01-09T21:51:49.819+0800	INFO	treehole_backend/main.go:30	初始化配置完成
+2023-01-09T21:51:49.823+0800	INFO	treehole_backend/main.go:34	配置路由完成
+2023-01-09T21:54:17.195+0800	INFO	treehole_backend/main.go:30	初始化配置完成
+2023-01-09T21:54:17.199+0800	INFO	treehole_backend/main.go:34	配置路由完成

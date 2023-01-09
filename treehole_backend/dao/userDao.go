@@ -5,6 +5,12 @@ import (
 	"treehole/utils"
 )
 
+// 查询数据库判断该identity是否已经存在
+func FindUserByIdentityCount(identity string) (cnt int64, err error) {
+	err = utils.DB.Where("identity = ?", identity).Model(new(models.UserBasic)).Count(&cnt).Error
+	return
+}
+
 // 查询数据库判断该邮箱是否已经存在
 func FindUserByEmailCount(email string) (cnt int64, err error) {
 	err = utils.DB.Where("email = ?", email).Model(new(models.UserBasic)).Count(&cnt).Error
@@ -24,9 +30,10 @@ func CreateUser(user models.UserBasic) error {
 }
 
 // 根据用户名查询信息
-func FindUserByName(username string) (user models.UserBasic, err error) {
-	err = utils.DB.Where("username = ?", username).First(&user).Error
-	return
+func FindUserByName(username string) (models.UserBasic, error) {
+	user := models.UserBasic{}
+	err := utils.DB.Where("username = ?", username).First(&user).Error
+	return user, err
 }
 
 // 根据邮箱查询信息
@@ -44,4 +51,10 @@ func FindByIdentity(identity string) (user models.UserBasic, err error) {
 // 修改用户信息
 func ModifyUserInfo(user models.UserBasic) error {
 	return utils.DB.Where("identity = ?", user.Identity).Updates(user).Error
+}
+
+// 判断该用户名是否已经被注册了
+func FindUserByNameAndIdentity(username, identity string) (cnt int64, err error) {
+	err = utils.DB.Model(new(models.UserBasic)).Where("username = ? and identity != ?", username, identity).Count(&cnt).Error
+	return
 }

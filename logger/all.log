@@ -1,0 +1,3 @@
+2023-01-09T20:12:55.135+0800	INFO	treehole_backend/main.go:30	初始化配置完成
+2023-01-09T20:12:55.185+0800	INFO	treehole_backend/main.go:34	配置路由完成
+2023-01-09T20:15:47.456+0800	ERROR	service/userService.go:90	FindUserByName Error username:test

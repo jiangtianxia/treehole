@@ -7,7 +7,7 @@ import (
 )
 
 // Hello
-// @Tags 公共方法
+// @Tags 公共接口
 // @Summary 首页
 // @Success 200 {string} hello world
 // @Router /hello [get]

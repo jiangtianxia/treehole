@@ -18,15 +18,7 @@ const (
 	EmailNotExistCode   MyCode = 1006
 	InvalidTokenCode    MyCode = 1007
 	ExpiredTokenCode    MyCode = 1008
-
-	CodeUserExist       MyCode = 10019
-	CodeUserNotExist    MyCode = 10020
-	CodeInvalidPassword MyCode = 10021
-	CodeServerBusy      MyCode = 10022
-
-	CodeInvalidToken MyCode = 1023
-	// CodeInvalidAuthFormat MyCode = 1007
-	// CodeNotLogin MyCode = 1008
+	ServerBusyCode      MyCode = 1009
 )
 
 var msgFlags = map[MyCode]string{
@@ -39,15 +31,7 @@ var msgFlags = map[MyCode]string{
 	EmailNotExistCode:   "该邮箱不存在",
 	InvalidTokenCode:    "无效的Token",
 	ExpiredTokenCode:    "Token已过期",
-
-	CodeUserExist:       "用户名重复",
-	CodeUserNotExist:    "用户不存在",
-	CodeInvalidPassword: "用户名或密码错误",
-	CodeServerBusy:      "服务繁忙",
-
-	CodeInvalidToken: "无效的Token",
-	// CodeInvalidAuthFormat: "认证格式有误",
-	// CodeNotLogin: "未登录",
+	ServerBusyCode:      "服务繁忙",
 }
 
 func (c MyCode) Msg() string {
@@ -55,5 +39,5 @@ func (c MyCode) Msg() string {
 	if ok {
 		return msg
 	}
-	return msgFlags[CodeServerBusy]
+	return msgFlags[ServerBusyCode]
 }

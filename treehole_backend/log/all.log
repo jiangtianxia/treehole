@@ -55,3 +55,7 @@
 2023-01-09T21:51:49.823+0800	INFO	treehole_backend/main.go:34	配置路由完成
 2023-01-09T21:54:17.195+0800	INFO	treehole_backend/main.go:30	初始化配置完成
 2023-01-09T21:54:17.199+0800	INFO	treehole_backend/main.go:34	配置路由完成
+2023-01-09T22:20:13.394+0800	INFO	treehole_backend/main.go:30	初始化配置完成
+2023-01-09T22:20:13.438+0800	INFO	treehole_backend/main.go:34	配置路由完成
+2023-01-09T22:26:04.137+0800	INFO	treehole_backend/main.go:30	初始化配置完成
+2023-01-09T22:26:04.138+0800	INFO	treehole_backend/main.go:34	配置路由完成

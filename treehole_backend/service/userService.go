@@ -143,7 +143,25 @@ func ModifyUserInfo(c *gin.Context) {
 			os.Remove(image.Url)
 		}
 	}
-	utils.RespSuccess(c, "修改用户信息成功", "", 0)
+
+	// 8、生成token并返回
+	token, err := utils.GenerateToken(userBasic.Identity, userBasic.Username)
+	if err != nil {
+		logger.SugarLogger.Error("Generate Token Error:" + err.Error())
+		utils.RespFail(c, int(define.FailCode), "修改用户信息失败")
+		return
+	}
+	userInfo := utils.UserInfo{
+		Username: userBasic.Username,
+		Usericon: userBasic.Usericon,
+		Age:      userBasic.Age,
+		Sex:      userBasic.Sex,
+	}
+	data := map[string]interface{}{
+		"token":    token,
+		"userInfo": userInfo,
+	}
+	utils.RespSuccess(c, "修改用户信息成功", data, 0)
 }
 
 // UserModifyPassword
@@ -203,16 +221,8 @@ func UserModifyPassword(c *gin.Context) {
 		return
 	}
 
-	// 4、修改密码并生成token返回
+	// 4、修改密码
 	newPassword := utils.MakePassword(user.Password)
-
-	// 开启事务来修改
-	tx := utils.DB.Begin()
-	defer func() {
-		if r := recover(); r != nil {
-			tx.Rollback()
-		}
-	}()
 
 	// 修改密码
 	NewUser := models.UserBasic{
@@ -223,21 +233,9 @@ func UserModifyPassword(c *gin.Context) {
 	err = dao.ModifyUserInfo(NewUser)
 	if err != nil {
 		logger.SugarLogger.Error("Modify UserInfo Error:" + err.Error())
-		tx.Rollback()
 		utils.RespFail(c, int(define.FailCode), "修改失败")
 		return
 	}
-	token, err := utils.GenerateToken(u.Identity, u.Username)
-	if err != nil {
-		logger.SugarLogger.Error("Generate Token Error:" + err.Error())
-		tx.Rollback()
-		utils.RespFail(c, int(define.FailCode), "修改失败")
-		return
-	}
-	tx.Commit()
 
-	data := map[string]string{
-		"token": token,
-	}
-	utils.RespSuccess(c, "修改成功", data, 0)
+	utils.RespSuccess(c, "修改成功", "", 0)
 }

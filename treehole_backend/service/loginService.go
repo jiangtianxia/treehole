@@ -168,8 +168,15 @@ func Register(c *gin.Context) {
 		return
 	}
 
-	data := map[string]string{
-		"token": token,
+	userInfo := utils.UserInfo{
+		Username: user.Username,
+		Usericon: "",
+		Age:      18,
+		Sex:      0,
+	}
+	data := map[string]interface{}{
+		"token":    token,
+		"userInfo": userInfo,
 	}
 	utils.RespSuccess(c, "注册成功", data, 0)
 }
@@ -275,8 +282,15 @@ func Login(c *gin.Context) {
 		return
 	}
 
-	data := map[string]string{
-		"token": token,
+	userInfo := utils.UserInfo{
+		Username: u.Username,
+		Usericon: u.Usericon,
+		Age:      u.Age,
+		Sex:      u.Sex,
+	}
+	data := map[string]interface{}{
+		"token":    token,
+		"userInfo": userInfo,
 	}
 	utils.RespSuccess(c, "登录成功", data, 0)
 }
@@ -419,8 +433,15 @@ func ModifyPassword(c *gin.Context) {
 		return
 	}
 
-	data := map[string]string{
-		"token": token,
+	userInfo := utils.UserInfo{
+		Username: user.Username,
+		Usericon: modify.Usericon,
+		Age:      modify.Age,
+		Sex:      modify.Sex,
+	}
+	data := map[string]interface{}{
+		"token":    token,
+		"userInfo": userInfo,
 	}
 	utils.RespSuccess(c, "修改成功", data, 0)
 }

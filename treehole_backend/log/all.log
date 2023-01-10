@@ -59,3 +59,65 @@
 2023-01-09T22:20:13.438+0800	INFO	treehole_backend/main.go:34	配置路由完成
 2023-01-09T22:26:04.137+0800	INFO	treehole_backend/main.go:30	初始化配置完成
 2023-01-09T22:26:04.138+0800	INFO	treehole_backend/main.go:34	配置路由完成
+2023-01-09T22:33:03.036+0800	INFO	treehole_backend/main.go:30	初始化配置完成
+2023-01-09T22:33:03.037+0800	INFO	treehole_backend/main.go:34	配置路由完成
+2023-01-10T08:52:40.553+0800	INFO	treehole_backend/main.go:30	初始化配置完成
+2023-01-10T08:52:40.607+0800	INFO	treehole_backend/main.go:34	配置路由完成
+2023-01-10T09:13:31.850+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-10T09:13:31.864+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-10T09:14:25.638+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-10T09:14:25.687+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-10T09:18:14.994+0800	ERROR	service/loginService.go:33	Params Invalidjson: cannot unmarshal number into Go value of type utils.SendCodeForm
+2023-01-10T09:28:07.397+0800	ERROR	service/loginService.go:33	Params Invalidjson: cannot unmarshal number into Go value of type utils.SendCodeForm
+2023-01-10T09:32:28.010+0800	ERROR	service/loginService.go:259	Search UserName Error:record not found
+2023-01-10T09:37:17.150+0800	ERROR	service/loginService.go:86	Params InvalidEOF
+2023-01-10T09:37:45.385+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-10T09:37:45.452+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-10T09:39:15.557+0800	ERROR	service/loginService.go:86	Params InvalidEOF
+2023-01-10T09:39:20.149+0800	ERROR	service/loginService.go:86	Params InvalidEOF
+2023-01-10T09:40:20.804+0800	ERROR	service/loginService.go:86	Params InvalidEOF
+2023-01-10T09:58:27.372+0800	ERROR	service/loginService.go:332	Generate Token Error:record not found
+2023-01-10T09:58:30.172+0800	ERROR	service/loginService.go:332	Generate Token Error:record not found
+2023-01-10T09:59:21.203+0800	ERROR	service/loginService.go:332	Generate Token Error:record not found
+2023-01-10T10:01:02.773+0800	ERROR	service/loginService.go:86	Params InvalidEOF
+2023-01-10T10:59:45.797+0800	ERROR	service/userService.go:133	DeleteImages Error:WHERE conditions requiredusername:www
+2023-01-10T11:10:56.567+0800	ERROR	service/userService.go:133	DeleteImages Error:WHERE conditions requiredusername:www
+2023-01-10T12:28:29.091+0800	ERROR	service/uploadService.go:34	Get FormFile Error:request Content-Type isn't multipart/form-data
+2023-01-10T13:21:00.362+0800	ERROR	service/uploadService.go:34	Get FormFile Error:unexpected EOF
+2023-01-10T13:21:31.547+0800	ERROR	service/uploadService.go:34	Get FormFile Error:unexpected EOF
+2023-01-10T13:24:47.199+0800	ERROR	service/uploadService.go:34	Get FormFile Error:unexpected EOF
+2023-01-10T13:25:28.261+0800	ERROR	service/uploadService.go:34	Get FormFile Error:unexpected EOF
+2023-01-10T14:35:31.635+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-10T14:35:31.636+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-10T14:36:22.694+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-10T14:36:22.742+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-10T16:13:50.891+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-10T16:13:50.891+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-10T16:14:27.244+0800	ERROR	service/uploadService.go:75	Save Uploaded File Error:open /upload/48497715771926164/48609747359819412.jpg: The system cannot find the path specified.
+2023-01-10T16:15:48.487+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-10T16:15:48.488+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-10T16:15:54.137+0800	ERROR	service/uploadService.go:75	Save Uploaded File Error:open /upload/48497715771926164/48609893137049236.jpg: The system cannot find the path specified.
+2023-01-10T16:15:58.780+0800	ERROR	service/uploadService.go:75	Save Uploaded File Error:open /upload/48497715771926164/48609900921677460.jpg: The system cannot find the path specified.
+2023-01-10T16:17:10.625+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-10T16:17:10.626+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-10T16:21:28.631+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-10T16:21:28.632+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-10T16:31:41.344+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-10T16:31:41.348+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-10T16:35:45.208+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-10T16:35:45.209+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-10T17:06:10.819+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-10T17:06:10.820+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-10T21:36:28.925+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-10T21:36:28.927+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-10T21:37:33.449+0800	ERROR	service/noteService.go:102	Find By Identity Error:record not found
+2023-01-10T21:38:34.586+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-10T21:38:34.588+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-10T22:57:32.577+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-10T22:57:32.578+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-10T23:09:30.693+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-10T23:09:30.694+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-10T23:37:26.371+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-10T23:37:26.416+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-10T23:55:53.579+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-10T23:55:53.580+0800	INFO	treehole_backend/main.go:48	配置路由完成

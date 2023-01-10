@@ -1,6 +1,7 @@
 package router
 
 import (
+	"net/http"
 	"treehole/middlewares"
 	"treehole/service"
 
@@ -19,8 +20,11 @@ func Router() *gin.Engine {
 	docs.SwaggerInfo.BasePath = "/api/v1"
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 
+	//加载静态资源，一般是上传的资源，例如用户上传的图片
+	r.StaticFS("/upload", http.Dir("upload"))
+
 	// 路由配置
-	v1 := r.Group("/api/v1")
+	v1 := r.Group("/api/v1", middlewares.CurrentLimit())
 	{
 		/*
 		* 公共接口
@@ -83,6 +87,14 @@ func Router() *gin.Engine {
 			user.POST("/userModifyPassword", service.UserModifyPassword)
 		}
 
+		/*
+		* 帖子业务接口
+		 */
+		note := v1.Group("/note", middlewares.AuthUserCheck())
+		{
+			// 创建帖子
+			note.POST("/createNote", service.CreateNote)
+		}
 	}
 
 	return r

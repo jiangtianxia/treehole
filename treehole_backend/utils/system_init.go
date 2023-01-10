@@ -13,6 +13,11 @@ import (
 	"gorm.io/gorm/logger"
 )
 
+/**
+ * @Author jiang
+ * @Description 初始化配置
+ * @Date 11:00 2023/1/8
+ **/
 func InitConfig() {
 	// 获取当前工作目录
 	work, _ := os.Getwd()
@@ -34,6 +39,11 @@ func InitConfig() {
 	// fmt.Println("confg mysql:", viper.Get("mysql"))
 }
 
+/**
+ * @Author jiang
+ * @Description Mysql初始化
+ * @Date 11:00 2023/1/8
+ **/
 var DB *gorm.DB
 
 // 初始化数据库
@@ -70,6 +80,11 @@ func InitMysql() {
 	fmt.Println("mysql inited ......")
 }
 
+/**
+ * @Author jiang
+ * @Description redis初始化
+ * @Date 11:00 2023/1/8
+ **/
 var RDB *redis.Client
 
 // 初始化Redis连接
@@ -87,4 +102,20 @@ func InitRedis() {
 
 func ReidsClose() {
 	RDB.Close()
+}
+
+/**
+ * @Author jiang
+ * @Description 令牌桶初始化
+ * @Date 9:00 2023/1/10
+ **/
+var Bucket TokenBucket
+
+func InitCurrentLimit() {
+	rate := viper.GetInt64("currentLimit.tokenBucket.rate")
+	capacity := viper.GetInt64("currentLimit.tokenBucket.capacity")
+
+	Bucket.Set(rate, capacity)
+
+	fmt.Println("TokenBucket inited")
 }

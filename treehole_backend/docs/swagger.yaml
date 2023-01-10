@@ -1,4 +1,16 @@
 definitions:
+  utils.CreateNoteForm:
+    properties:
+      content:
+        type: string
+      title:
+        type: string
+      urls:
+        type: string
+    required:
+    - content
+    - title
+    type: object
   utils.H:
     properties:
       code:
@@ -211,6 +223,32 @@ paths:
       summary: 用户登录
       tags:
       - 登录业务接口
+  /note/createNote:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: 发送参数
+        in: body
+        name: object
+        required: true
+        schema:
+          $ref: '#/definitions/utils.CreateNoteForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/utils.H'
+      summary: 创建帖子
+      tags:
+      - 帖子业务接口
   /register:
     post:
       consumes:

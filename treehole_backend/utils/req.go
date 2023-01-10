@@ -82,3 +82,14 @@ type UserModifyPasswordForm struct {
 	Password    string `json:"password" binding:"required"`
 	RePassword  string `json:"repassword" binding:"required,eqfield=Password"`
 }
+
+/**
+ * @Author jiang
+ * @Description 创建帖子请求参数
+ * @Date 16:00 2023/1/9
+ **/
+type CreateNoteForm struct {
+	Title   string `json:"title" binding:"required"`
+	Urls    string `json:"urls"`
+	Content string `json:"content" binding:"required"`
+}

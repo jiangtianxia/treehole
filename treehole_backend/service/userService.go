@@ -140,12 +140,13 @@ func ModifyUserInfo(c *gin.Context) {
 	// 7、删除本地图片
 	for _, image := range ImageList {
 		if image.Url != userBasic.Usericon {
-			os.Remove(image.Url)
+			dstFile := "." + image.Url
+			os.Remove(dstFile)
 		}
 	}
 
 	// 8、生成token并返回
-	token, err := utils.GenerateToken(userBasic.Identity, userBasic.Username)
+	token, err := utils.GenerateToken(userBasic.Identity, userBasic.Username, userBasic.Usericon)
 	if err != nil {
 		logger.SugarLogger.Error("Generate Token Error:" + err.Error())
 		utils.RespFail(c, int(define.FailCode), "修改用户信息失败")

@@ -19,6 +19,10 @@ redis:
     DB: 0
     poolSize: 1000
     minIdleConn: 10000
+    KeyNoteTimeZSetPrefix: "treehole:note:time"
+    KeyNoteVotedZSetPrefix: "treehole:note:voted:"
+    KeyNoteScoreZSetPrefix: "treehole:note:score"
+    
 
 md5:
     salt: "treeholeGi0I0R1tC#%"
@@ -29,3 +33,8 @@ snowflake:
 jwt:
     key: "h2wnknlsd"
     expire: 120
+
+currentLimit:
+    tokenBucket:
+        rate:   1000
+        capacity: 5000

@@ -39,11 +39,11 @@ func GetID() (id uint64, err error) { // 拿到sonyflake节点生成id值
 	return
 }
 
-func main2() {
-	if err := Init(1); err != nil {
-		fmt.Printf("Init failed,err:%v\n", err)
-		return
-	}
-	id, _ := GetID()
-	fmt.Println(id)
-}
+// func main() {
+// 	if err := Init(1); err != nil {
+// 		fmt.Printf("Init failed,err:%v\n", err)
+// 		return
+// 	}
+// 	id, _ := GetID()
+// 	fmt.Println(id)
+// }

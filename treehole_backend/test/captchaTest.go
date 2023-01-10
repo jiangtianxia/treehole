@@ -52,9 +52,9 @@ func VerifyCaptcha(id string, VerifyValue string) bool {
 	}
 }
 
-func main5() {
-	id, b64s, _ := MakeCaptcha()
+// func main() {
+// 	id, b64s, _ := MakeCaptcha()
 
-	fmt.Println(b64s)
-	fmt.Println(VerifyCaptcha(id, b64s))
-}
+// 	fmt.Println(b64s)
+// 	fmt.Println(VerifyCaptcha(id, b64s))
+// }

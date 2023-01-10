@@ -80,7 +80,7 @@ func UploadLocal(c *gin.Context) {
 	// 5、将url返回，同时将图片存入图片数据库
 	imageBasic := models.ImageBasic{
 		Identity: userClaim.Identity,
-		Url:      dstFile,
+		Url:      dstFile[1:],
 		Type:     imageType,
 	}
 	err = dao.CreateImage(imageBasic)
@@ -94,7 +94,7 @@ func UploadLocal(c *gin.Context) {
 	}
 
 	data := map[string]string{
-		"url": dstFile,
+		"url": imageBasic.Url,
 	}
 	utils.RespSuccess(c, "上传文件成功", data, 0)
 }

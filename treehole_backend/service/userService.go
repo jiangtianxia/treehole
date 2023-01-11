@@ -40,7 +40,7 @@ func GetUserInfo(c *gin.Context) {
 		"sex":      user.Sex,
 		"age":      user.Age,
 	}
-	utils.RespSuccess(c, "获取用户信息成功", data, 0)
+	utils.RespSuccess(c, "获取用户信息成功", data)
 }
 
 // ModifyUserInfo
@@ -146,7 +146,7 @@ func ModifyUserInfo(c *gin.Context) {
 	}
 
 	// 8、生成token并返回
-	token, err := utils.GenerateToken(userBasic.Identity, userBasic.Username, userBasic.Usericon)
+	token, err := utils.GenerateToken(userBasic.Identity, userBasic.Username)
 	if err != nil {
 		logger.SugarLogger.Error("Generate Token Error:" + err.Error())
 		utils.RespFail(c, int(define.FailCode), "修改用户信息失败")
@@ -162,7 +162,7 @@ func ModifyUserInfo(c *gin.Context) {
 		"token":    token,
 		"userInfo": userInfo,
 	}
-	utils.RespSuccess(c, "修改用户信息成功", data, 0)
+	utils.RespSuccess(c, "修改用户信息成功", data)
 }
 
 // UserModifyPassword
@@ -238,5 +238,5 @@ func UserModifyPassword(c *gin.Context) {
 		return
 	}
 
-	utils.RespSuccess(c, "修改成功", "", 0)
+	utils.RespSuccess(c, "修改成功", "")
 }

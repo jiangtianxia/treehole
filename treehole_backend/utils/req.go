@@ -93,3 +93,12 @@ type CreateNoteForm struct {
 	Urls    string `json:"urls"`
 	Content string `json:"content" binding:"required"`
 }
+
+/**
+ * @Author jiang
+ * @Description 获取帖子详细信息
+ * @Date 13:00 2023/1/11
+ **/
+type GetNoteInfoFrom struct {
+	NoteIdentity string `json:"note_identity" binding:"required"`
+}

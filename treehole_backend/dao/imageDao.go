@@ -21,3 +21,7 @@ func FindImageByIdentity(identity, url string) ([]*models.ImageBasic, error) {
 func DeleteImages(imageList []*models.ImageBasic) error {
 	return utils.DB.Delete(imageList).Error
 }
+
+func DeleteImage(url string) error {
+	return utils.DB.Where("url = ? and type = 2", url).Delete(new(models.ImageBasic)).Error
+}

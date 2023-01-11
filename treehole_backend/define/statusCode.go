@@ -6,6 +6,14 @@ package define
  * @Date 11:00 2023/1/8
  **/
 
+const (
+	OneWeekInSeconds         = 7 * 24 * 3600
+	VoteScore        float64 = 500 // 每一票的值500分
+)
+
+var DefaultSize = "20" // 默认大小
+var DefaultPage = "1"  // 默认页数
+
 type MyCode int64
 
 const (

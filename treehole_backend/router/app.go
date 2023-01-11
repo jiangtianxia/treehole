@@ -34,6 +34,15 @@ func Router() *gin.Engine {
 		// 图片上传
 		v1.POST("/uploadLocal", middlewares.AuthUserCheck(), service.UploadLocal)
 
+		// 获取帖子详细信息
+		v1.POST("/getNoteInfo", service.GetNoteInfo)
+
+		// 搜索帖子信息
+		v1.GET("/searchNotes", service.SearchNotes)
+
+		// 按照热度或时间读取帖子信息
+		v1.GET("/searchNotesScoreOrTime", service.SearchNotesScoreOrTime)
+
 		/*
 		* 登录业务接口
 		 */
@@ -94,6 +103,12 @@ func Router() *gin.Engine {
 		{
 			// 创建帖子
 			note.POST("/createNote", service.CreateNote)
+
+			// 获取发布帖子列表
+			note.GET("/getNoteList", service.GetNoteList)
+
+			// 删除帖子
+			note.POST("/deleteNote", service.DeleteNote)
 		}
 	}
 

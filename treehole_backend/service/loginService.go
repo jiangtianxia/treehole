@@ -63,7 +63,7 @@ func SendEmailCode(c *gin.Context) {
 		return
 	}
 
-	utils.RespSuccess(c, "发送邮箱验证码成功", "", 0)
+	utils.RespSuccess(c, "发送邮箱验证码成功", "")
 }
 
 // Register
@@ -161,7 +161,7 @@ func Register(c *gin.Context) {
 	}
 
 	// 使用jwt生成token，返回
-	token, err := utils.GenerateToken(u.Identity, u.Username, "")
+	token, err := utils.GenerateToken(u.Identity, u.Username)
 	if err != nil {
 		logger.SugarLogger.Error("Generate Token Error:" + err.Error())
 		utils.RespFail(c, int(define.FailCode), "注册失败")
@@ -178,7 +178,7 @@ func Register(c *gin.Context) {
 		"token":    token,
 		"userInfo": userInfo,
 	}
-	utils.RespSuccess(c, "注册成功", data, 0)
+	utils.RespSuccess(c, "注册成功", data)
 }
 
 // GetCapacha
@@ -198,7 +198,7 @@ func GetCapacha(c *gin.Context) {
 		"captchaId": id,
 		"base64":    base64,
 	}
-	utils.RespSuccess(c, "获取图片验证码成功", data, 0)
+	utils.RespSuccess(c, "获取图片验证码成功", data)
 }
 
 // VerifyCapacha
@@ -216,7 +216,7 @@ func VerifyCapacha(c *gin.Context) {
 	// answer 需要验证的内容
 	// clear 校验完是否清除
 	if utils.Store.Verify(id, capachaVal, true) {
-		utils.RespSuccess(c, "验证图片验证码成功", "", 0)
+		utils.RespSuccess(c, "验证图片验证码成功", "")
 	} else {
 		utils.RespFail(c, int(define.FailCode), "验证图片验证码失败")
 	}
@@ -275,7 +275,7 @@ func Login(c *gin.Context) {
 	}
 
 	// 4、生成token返回
-	token, err := utils.GenerateToken(u.Identity, u.Username, u.Usericon)
+	token, err := utils.GenerateToken(u.Identity, u.Username)
 	if err != nil {
 		logger.SugarLogger.Error("Generate Token Error:" + err.Error())
 		utils.RespFail(c, int(define.FailCode), "登录失败")
@@ -292,7 +292,7 @@ func Login(c *gin.Context) {
 		"token":    token,
 		"userInfo": userInfo,
 	}
-	utils.RespSuccess(c, "登录成功", data, 0)
+	utils.RespSuccess(c, "登录成功", data)
 }
 
 // VerifyEmailCode
@@ -346,7 +346,7 @@ func VerifyEmailCode(c *gin.Context) {
 	}
 
 	// 4、生成token并返回
-	token, err := utils.GenerateToken(u.Identity, u.Username, u.Usericon)
+	token, err := utils.GenerateToken(u.Identity, u.Username)
 	if err != nil {
 		logger.SugarLogger.Error("Generate Token Error:" + err.Error())
 		utils.RespFail(c, int(define.FailCode), "验证失败")
@@ -356,7 +356,7 @@ func VerifyEmailCode(c *gin.Context) {
 	data := map[string]string{
 		"token": token,
 	}
-	utils.RespSuccess(c, "验证成功", data, 0)
+	utils.RespSuccess(c, "验证成功", data)
 }
 
 // ModifyPassword
@@ -426,7 +426,7 @@ func ModifyPassword(c *gin.Context) {
 	}
 
 	// 4、生成token并返回
-	token, err := utils.GenerateToken(newUser.Identity, newUser.Username, modify.Usericon)
+	token, err := utils.GenerateToken(newUser.Identity, newUser.Username)
 	if err != nil {
 		logger.SugarLogger.Error("Generate Token Error:" + err.Error())
 		utils.RespFail(c, int(define.FailCode), "修改失败")
@@ -443,5 +443,5 @@ func ModifyPassword(c *gin.Context) {
 		"token":    token,
 		"userInfo": userInfo,
 	}
-	utils.RespSuccess(c, "修改成功", data, 0)
+	utils.RespSuccess(c, "修改成功", data)
 }

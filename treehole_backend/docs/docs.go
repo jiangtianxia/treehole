@@ -137,6 +137,39 @@ const docTemplate = `{
                 }
             }
         },
+        "/getNoteInfo": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "公共接口"
+                ],
+                "summary": "获取帖子详细信息",
+                "parameters": [
+                    {
+                        "description": "发送参数",
+                        "name": "object",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/utils.GetNoteInfoFrom"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/utils.H"
+                        }
+                    }
+                }
+            }
+        },
         "/hello": {
             "get": {
                 "tags": [
@@ -226,6 +259,83 @@ const docTemplate = `{
                 }
             }
         },
+        "/note/deleteNote": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "帖子业务接口"
+                ],
+                "summary": "删除帖子",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "发送参数",
+                        "name": "object",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/utils.GetNoteInfoFrom"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/utils.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/note/getNoteList": {
+            "get": {
+                "tags": [
+                    "帖子业务接口"
+                ],
+                "summary": "获取发布帖子列表",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "page",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "size",
+                        "name": "size",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/utils.H"
+                        }
+                    }
+                }
+            }
+        },
         "/register": {
             "post": {
                 "consumes": [
@@ -247,6 +357,79 @@ const docTemplate = `{
                         "schema": {
                             "$ref": "#/definitions/utils.RegisterForm"
                         }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/utils.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/searchNotes": {
+            "get": {
+                "tags": [
+                    "公共接口"
+                ],
+                "summary": "搜索帖子",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "page",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "size",
+                        "name": "size",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "keyword",
+                        "name": "keyword",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/utils.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/searchNotesScoreOrTime": {
+            "get": {
+                "tags": [
+                    "公共接口"
+                ],
+                "summary": "按照热度或时间获取帖子信息",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "page",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "size",
+                        "name": "size",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "type",
+                        "name": "type",
+                        "in": "query",
+                        "required": true
                     }
                 ],
                 "responses": {
@@ -462,6 +645,17 @@ const docTemplate = `{
                 }
             }
         },
+        "utils.GetNoteInfoFrom": {
+            "type": "object",
+            "required": [
+                "note_identity"
+            ],
+            "properties": {
+                "note_identity": {
+                    "type": "string"
+                }
+            }
+        },
         "utils.H": {
             "type": "object",
             "properties": {
@@ -471,8 +665,7 @@ const docTemplate = `{
                 "data": {},
                 "msg": {
                     "type": "string"
-                },
-                "total": {}
+                }
             }
         },
         "utils.LoginForm": {

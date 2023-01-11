@@ -11,6 +11,13 @@ definitions:
     - content
     - title
     type: object
+  utils.GetNoteInfoFrom:
+    properties:
+      note_identity:
+        type: string
+    required:
+    - note_identity
+    type: object
   utils.H:
     properties:
       code:
@@ -18,7 +25,6 @@ definitions:
       data: {}
       msg:
         type: string
-      total: {}
     type: object
   utils.LoginForm:
     properties:
@@ -192,6 +198,27 @@ paths:
       summary: 忘记密码-验证验证码
       tags:
       - 登录业务接口
+  /getNoteInfo:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 发送参数
+        in: body
+        name: object
+        required: true
+        schema:
+          $ref: '#/definitions/utils.GetNoteInfoFrom'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/utils.H'
+      summary: 获取帖子详细信息
+      tags:
+      - 公共接口
   /hello:
     get:
       responses:
@@ -249,6 +276,56 @@ paths:
       summary: 创建帖子
       tags:
       - 帖子业务接口
+  /note/deleteNote:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: 发送参数
+        in: body
+        name: object
+        required: true
+        schema:
+          $ref: '#/definitions/utils.GetNoteInfoFrom'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/utils.H'
+      summary: 删除帖子
+      tags:
+      - 帖子业务接口
+  /note/getNoteList:
+    get:
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: page
+        in: query
+        name: page
+        type: integer
+      - description: size
+        in: query
+        name: size
+        type: integer
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/utils.H'
+      summary: 获取发布帖子列表
+      tags:
+      - 帖子业务接口
   /register:
     post:
       consumes:
@@ -270,6 +347,53 @@ paths:
       summary: 用户注册
       tags:
       - 登录业务接口
+  /searchNotes:
+    get:
+      parameters:
+      - description: page
+        in: query
+        name: page
+        type: integer
+      - description: size
+        in: query
+        name: size
+        type: integer
+      - description: keyword
+        in: query
+        name: keyword
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/utils.H'
+      summary: 搜索帖子
+      tags:
+      - 公共接口
+  /searchNotesScoreOrTime:
+    get:
+      parameters:
+      - description: page
+        in: query
+        name: page
+        type: integer
+      - description: size
+        in: query
+        name: size
+        type: integer
+      - description: type
+        in: query
+        name: type
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/utils.H'
+      summary: 按照热度或时间获取帖子信息
+      tags:
+      - 公共接口
   /sendEmailCode:
     post:
       consumes:

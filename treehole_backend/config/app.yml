@@ -22,6 +22,7 @@ redis:
     KeyNoteTimeZSetPrefix: "treehole:note:time"
     KeyNoteVotedZSetPrefix: "treehole:note:voted:"
     KeyNoteScoreZSetPrefix: "treehole:note:score"
+    KeyNoteInfoHashPrefix: "treehole:noteinfo:"
     
 
 md5:

@@ -5,6 +5,7 @@ import (
 	"os"
 	"path"
 	"strconv"
+	"strings"
 	"treehole/dao"
 	"treehole/define"
 	"treehole/logger"
@@ -96,5 +97,63 @@ func UploadLocal(c *gin.Context) {
 	data := map[string]string{
 		"url": imageBasic.Url,
 	}
-	utils.RespSuccess(c, "上传文件成功", data, 0)
+	utils.RespSuccess(c, "上传文件成功", data)
+}
+
+// 删除数据库数据，并删除本地图片
+func DeleteImageAndMysql(note_identity string) error {
+	// 1、先删除数据库数据
+	tx := utils.DB.Begin()
+	//事务一旦开始，不论什么异常最终都会 Rollback
+	defer func() {
+		if r := recover(); r != nil {
+			tx.Rollback()
+		}
+	}()
+
+	// 获取urls信息
+	urls, err := dao.GetNoteList(note_identity)
+	if err != nil {
+		tx.Rollback()
+		logger.SugarLogger.Error("GetNoteList Error" + err.Error())
+		return err
+	}
+
+	// 删除notebasic表
+	err = dao.DeleteNote(note_identity)
+	if err != nil {
+		tx.Rollback()
+		logger.SugarLogger.Error("DeleteNote Error" + err.Error())
+		return err
+	}
+
+	// 删除notebasic表
+	err = dao.DeleteUserNote(note_identity)
+	if err != nil {
+		tx.Rollback()
+		logger.SugarLogger.Error("DeleteUserNote Error" + err.Error())
+		return err
+	}
+
+	tx.Commit()
+
+	// 2、删除本地图片信息
+	list := strings.Split(urls.Urls, ",")
+
+	// 循环遍历删除
+	for _, v := range list {
+		// 删除imagebasic表
+		err = dao.DeleteImage(v)
+		if err != nil {
+			logger.SugarLogger.Error("DeleteImage Error" + err.Error())
+			return err
+		}
+		err = os.Remove("." + v)
+		if err != nil {
+			logger.SugarLogger.Error("Delete files Error" + err.Error())
+			return err
+		}
+	}
+
+	return nil
 }

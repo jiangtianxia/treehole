@@ -16,6 +16,8 @@ func main() {
 	// 迁移 schema
 	// db.AutoMigrate(&models.UserBasic{})
 	// db.AutoMigrate(&models.ImageBasic{})
-	db.AutoMigrate(&models.NoteBasic{})
+	// db.AutoMigrate(&models.NoteBasic{})
 	// db.AutoMigrate(&models.UserNote{})
+	// db.AutoMigrate(&models.VotedNote{})
+	db.AutoMigrate(&models.CommentNote{})
 }

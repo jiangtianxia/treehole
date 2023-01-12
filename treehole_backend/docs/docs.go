@@ -64,6 +64,167 @@ const docTemplate = `{
                 }
             }
         },
+        "/comment/createComment": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "评论业务接口"
+                ],
+                "summary": "发送评论",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "发送参数",
+                        "name": "object",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/utils.CreateCommentFrom"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/utils.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/comment/deleteNoteComment": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "评论业务接口"
+                ],
+                "summary": "删除评论",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "发送参数",
+                        "name": "object",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/utils.DeleteNoteCommentFrom"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/utils.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/comment/getCommentList": {
+            "get": {
+                "tags": [
+                    "评论业务接口"
+                ],
+                "summary": "获取评论记录",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "page",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "size",
+                        "name": "size",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/utils.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/comment/getNoteCommentList": {
+            "get": {
+                "tags": [
+                    "评论业务接口"
+                ],
+                "summary": "获取帖子评论列表",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "page",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "size",
+                        "name": "size",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "node_identity",
+                        "name": "note_identity",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/utils.H"
+                        }
+                    }
+                }
+            }
+        },
         "/forgetPassword/modifyPassword": {
             "post": {
                 "consumes": [
@@ -124,39 +285,6 @@ const docTemplate = `{
                         "required": true,
                         "schema": {
                             "$ref": "#/definitions/utils.VerifyEmailCodeForm"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/utils.H"
-                        }
-                    }
-                }
-            }
-        },
-        "/getNoteInfo": {
-            "post": {
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "公共接口"
-                ],
-                "summary": "获取帖子详细信息",
-                "parameters": [
-                    {
-                        "description": "发送参数",
-                        "name": "object",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/utils.GetNoteInfoFrom"
                         }
                     }
                 ],
@@ -299,6 +427,46 @@ const docTemplate = `{
                 }
             }
         },
+        "/note/getNoteInfo": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "帖子业务接口"
+                ],
+                "summary": "获取帖子详细信息",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "发送参数",
+                        "name": "object",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/utils.GetNoteInfoFrom"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/utils.H"
+                        }
+                    }
+                }
+            }
+        },
         "/note/getNoteList": {
             "get": {
                 "tags": [
@@ -324,6 +492,86 @@ const docTemplate = `{
                         "description": "size",
                         "name": "size",
                         "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/utils.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/note/modifyNote": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "帖子业务接口"
+                ],
+                "summary": "修改帖子",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "发送参数",
+                        "name": "object",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/utils.ModifyNoteForm"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/utils.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/note/votedNote": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "帖子业务接口"
+                ],
+                "summary": "点赞或踩帖子",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "发送参数",
+                        "name": "object",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/utils.VotedNoteFrom"
+                        }
                     }
                 ],
                 "responses": {
@@ -627,6 +875,21 @@ const docTemplate = `{
         }
     },
     "definitions": {
+        "utils.CreateCommentFrom": {
+            "type": "object",
+            "required": [
+                "content",
+                "note_identity"
+            ],
+            "properties": {
+                "content": {
+                    "type": "string"
+                },
+                "note_identity": {
+                    "type": "string"
+                }
+            }
+        },
         "utils.CreateNoteForm": {
             "type": "object",
             "required": [
@@ -641,6 +904,21 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "urls": {
+                    "type": "string"
+                }
+            }
+        },
+        "utils.DeleteNoteCommentFrom": {
+            "type": "object",
+            "required": [
+                "comment_identity",
+                "note_identity"
+            ],
+            "properties": {
+                "comment_identity": {
+                    "type": "string"
+                },
+                "note_identity": {
                     "type": "string"
                 }
             }
@@ -683,6 +961,28 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "username": {
+                    "type": "string"
+                }
+            }
+        },
+        "utils.ModifyNoteForm": {
+            "type": "object",
+            "required": [
+                "content",
+                "note_identity",
+                "title"
+            ],
+            "properties": {
+                "content": {
+                    "type": "string"
+                },
+                "note_identity": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "urls": {
                     "type": "string"
                 }
             }
@@ -797,6 +1097,25 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "email": {
+                    "type": "string"
+                }
+            }
+        },
+        "utils.VotedNoteFrom": {
+            "type": "object",
+            "required": [
+                "flag",
+                "note_identity",
+                "voted"
+            ],
+            "properties": {
+                "flag": {
+                    "type": "string"
+                },
+                "note_identity": {
+                    "type": "string"
+                },
+                "voted": {
                     "type": "string"
                 }
             }

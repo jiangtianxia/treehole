@@ -280,3 +280,115 @@
 2023-01-12T00:49:58.727+0800	INFO	treehole_backend/main.go:48	配置路由完成
 2023-01-12T00:50:20.484+0800	INFO	treehole_backend/main.go:44	初始化配置完成
 2023-01-12T00:50:20.574+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T00:56:13.880+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T00:56:13.891+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T09:16:47.760+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T09:16:47.761+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T09:34:50.274+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T09:34:50.275+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T09:53:33.341+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T09:53:33.342+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T11:09:04.867+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T11:09:04.869+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T11:10:50.716+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T11:10:50.719+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T11:14:21.816+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T11:14:21.816+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T13:31:16.066+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T13:31:16.112+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T13:32:24.596+0800	ERROR	middlewares/authUser.go:26	Unauthorized Authorization
+2023-01-12T14:00:53.401+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T14:00:53.408+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T14:02:23.419+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T14:02:23.421+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T14:02:43.268+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T14:02:43.270+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T14:04:11.089+0800	ERROR	service/loginService.go:272	Invalid Password
+2023-01-12T14:16:23.869+0800	ERROR	service/userService.go:64	Params Invalidjson: cannot unmarshal number into Go struct field ModifyUserInfoForm.age of type string
+2023-01-12T14:17:01.513+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T14:17:01.514+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T14:21:32.263+0800	ERROR	service/userService.go:64	Params Invalidjson: cannot unmarshal number into Go struct field ModifyUserInfoForm.age of type string
+2023-01-12T14:28:45.742+0800	ERROR	service/userService.go:64	Params Invalidjson: cannot unmarshal number into Go struct field ModifyUserInfoForm.age of type string
+2023-01-12T14:33:19.553+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T14:33:19.556+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T14:37:26.144+0800	ERROR	service/userService.go:64	Params Invalidjson: cannot unmarshal number into Go struct field ModifyUserInfoForm.age of type string
+2023-01-12T14:38:15.875+0800	ERROR	service/userService.go:64	Params Invalidjson: cannot unmarshal number into Go struct field ModifyUserInfoForm.age of type string
+2023-01-12T14:43:27.567+0800	ERROR	service/userService.go:64	Params Invalidjson: cannot unmarshal number into Go struct field ModifyUserInfoForm.age of type string
+2023-01-12T14:47:47.996+0800	ERROR	service/userService.go:73	Params InvalidUrl为必填字段,
+2023-01-12T14:51:26.350+0800	ERROR	service/userService.go:73	Params InvalidUrl为必填字段,
+2023-01-12T14:51:36.720+0800	ERROR	service/userService.go:73	Params InvalidUrl为必填字段,
+2023-01-12T14:56:59.903+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T14:56:59.904+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T15:13:17.665+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T15:13:17.667+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T15:27:33.114+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T15:27:33.115+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T15:42:52.165+0800	ERROR	middlewares/authUser.go:26	Unauthorized Authorization
+2023-01-12T15:55:21.766+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T15:55:21.806+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T21:16:26.854+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T21:16:26.855+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T21:19:12.039+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T21:19:12.041+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T21:21:20.782+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T21:21:20.783+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T21:22:52.779+0800	ERROR	service/commentService.go:43	Params InvalidNoteIdentity为必填字段,
+2023-01-12T21:25:16.757+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T21:25:16.760+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T21:29:05.808+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T21:29:05.809+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T21:29:17.828+0800	ERROR	service/commentService.go:63	GetNoteList Errorrecord not found
+2023-01-12T21:32:16.542+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T21:32:16.543+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T21:35:04.300+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T21:35:04.301+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T22:17:11.751+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T22:17:11.752+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T22:18:46.953+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T22:18:46.955+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T22:20:54.958+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T22:20:54.959+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T22:22:32.524+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T22:22:32.562+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T22:22:43.158+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T22:22:43.159+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T22:27:02.430+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T22:27:02.433+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T22:31:22.732+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T22:31:22.733+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T22:33:08.294+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T22:33:08.295+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T22:33:31.185+0800	ERROR	service/commentService.go:150	GetNoteList Errorrecord not found
+2023-01-12T22:34:42.810+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T22:34:42.845+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T22:34:47.057+0800	ERROR	service/commentService.go:150	GetNoteList Errorrecord not found
+2023-01-12T22:36:19.313+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T22:36:19.319+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T22:41:05.623+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T22:41:05.624+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T22:46:02.918+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T22:46:02.921+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T22:51:07.802+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T22:51:07.803+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T22:52:48.906+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T22:52:48.907+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T22:53:36.068+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T22:53:36.070+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T22:57:02.003+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T22:57:02.041+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T23:09:00.154+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T23:09:00.155+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T23:15:40.071+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T23:15:40.073+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T23:17:50.663+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T23:17:50.664+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T23:41:28.112+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T23:41:28.115+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T23:42:27.380+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T23:42:27.384+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T23:42:37.428+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T23:42:37.433+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T23:47:01.664+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T23:47:01.665+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-12T23:47:46.123+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-12T23:47:46.124+0800	INFO	treehole_backend/main.go:48	配置路由完成

@@ -1,7 +1,6 @@
 package middlewares
 
 import (
-	"fmt"
 	"treehole/define"
 	"treehole/utils"
 
@@ -22,7 +21,6 @@ func CurrentLimit() gin.HandlerFunc {
 			utils.RespFail(ctx, int(define.ServerBusyCode), define.ServerBusyCode.Msg())
 			return
 		}
-		fmt.Println(utils.Bucket.Allow())
 		ctx.Next()
 	}
 }

@@ -11,8 +11,8 @@ type NoteBasic struct {
 	Content    string `gorm:"coulmn:content;type:text" json:"content"`                  // 内容
 	Urls       string `gorm:"coulmn:urls;type:text" json:"urls"`                        // 图片url，用逗号隔开
 	Score      int    `gorm:"coulmn:score;type:int;" json:"score"`                      // 分数
-	Approve    int    `gorm:"coulmn:approve;type:int;" json:"approve"`                  // 赞票数
-	Against    int    `gorm:"coulmn:against;type:int;" json:"against"`                  // 反对票数
+	Approve    string `gorm:"coulmn:approve;type:varchar(3);" json:"approve"`           // 赞票数
+	Against    string `gorm:"coulmn:against;type:varchar(3);" json:"against"`           // 反对票数
 	Visit      int    `gorm:"coulmn:visit;type:int;" json:"visit"`                      // 访问人数
 	CreateTime string `gorm:"coulmn:create_time;type:varchar(100);" json:"create_time"` // 发布时间
 }

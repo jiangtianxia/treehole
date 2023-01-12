@@ -102,3 +102,46 @@ type CreateNoteForm struct {
 type GetNoteInfoFrom struct {
 	NoteIdentity string `json:"note_identity" binding:"required"`
 }
+
+/**
+ * @Author jiang
+ * @Description 修改帖子请求参数
+ * @Date 16:00 2023/1/9
+ **/
+type ModifyNoteForm struct {
+	NoteIdentity string `json:"note_identity" binding:"required"`
+	Title        string `json:"title" binding:"required"`
+	Urls         string `json:"urls"`
+	Content      string `json:"content" binding:"required"`
+}
+
+/**
+ * @Author jiang
+ * @Description 点赞或踩请求参数
+ * @Date 17:00 2023/1/12
+ **/
+type VotedNoteFrom struct {
+	NoteIdentity string `json:"note_identity" binding:"required"`
+	Voted        string `json:"voted" binding:"required"`
+	Flag         string `json:"flag" binding:"required"`
+}
+
+/**
+ * @Author jiang
+ * @Description 发送评论请求参数
+ * @Date 21:00 2023/1/12
+ **/
+type CreateCommentFrom struct {
+	NoteIdentity string `json:"note_identity" binding:"required"`
+	Content      string `json:"content" binding:"required"`
+}
+
+/**
+ * @Author jiang
+ * @Description 删除评论请求参数
+ * @Date 23:30 2023/1/12
+ **/
+type DeleteNoteCommentFrom struct {
+	CommentIdentity string `json:"comment_identity" binding:"required"`
+	NoteIdentity    string `json:"note_identity" binding:"required"`
+}

@@ -23,6 +23,8 @@ redis:
     KeyNoteVotedZSetPrefix: "treehole:note:voted:"
     KeyNoteScoreZSetPrefix: "treehole:note:score"
     KeyNoteInfoHashPrefix: "treehole:noteinfo:"
+    KeyCommentListPrefix: "treehole:comment:list:"
+    KeyCommentHashPrefix: "treehole:comment:hash:"
     
 
 md5:

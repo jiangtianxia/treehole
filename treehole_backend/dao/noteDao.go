@@ -19,7 +19,7 @@ func SearchNotes(keyword string) *gorm.DB {
 	return tx.Order("score desc")
 }
 
-// 查询全部帖子信息
+// 查询帖子信息
 func GetNoteList(identity string) (models.NoteBasic, error) {
 	res := models.NoteBasic{}
 

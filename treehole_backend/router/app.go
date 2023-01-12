@@ -34,9 +34,6 @@ func Router() *gin.Engine {
 		// 图片上传
 		v1.POST("/uploadLocal", middlewares.AuthUserCheck(), service.UploadLocal)
 
-		// 获取帖子详细信息
-		v1.POST("/getNoteInfo", service.GetNoteInfo)
-
 		// 搜索帖子信息
 		v1.GET("/searchNotes", service.SearchNotes)
 
@@ -109,6 +106,33 @@ func Router() *gin.Engine {
 
 			// 删除帖子
 			note.POST("/deleteNote", service.DeleteNote)
+
+			// 获取帖子详细信息
+			note.POST("/getNoteInfo", service.GetNoteInfo)
+
+			// 修改帖子
+			note.POST("/modifyNote", service.ModifyNote)
+
+			// 点赞帖子
+			note.POST("/votedNote", service.VotedNote)
+		}
+
+		/*
+		* 评论业务接口
+		 */
+		comment := v1.Group("/comment", middlewares.AuthUserCheck())
+		{
+			// 发送评论
+			comment.POST("/createComment", service.CreateComment)
+
+			// 获取文章评论
+			comment.GET("/getNoteCommentList", service.GetNoteCommentList)
+
+			// 获取评论记录
+			comment.GET("/getCommentList", service.GetCommentList)
+
+			// 删除评论记录
+			comment.POST("/deleteNoteComment", service.DeleteNoteComment)
 		}
 	}
 

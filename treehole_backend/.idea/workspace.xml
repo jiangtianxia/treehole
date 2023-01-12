@@ -9,24 +9,17 @@
       <change beforePath="$PROJECT_DIR$/config/app.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dao/noteDao.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/noteDao.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dao/redisDao.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/redisDao.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/userNoteDao.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/userNoteDao.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/define/statusCode.go" beforeDir="false" afterPath="$PROJECT_DIR$/define/statusCode.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/docs.go" beforeDir="false" afterPath="$PROJECT_DIR$/docs/docs.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/swagger.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/swagger.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/swagger.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/swagger.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/all.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/all.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/noteBasic.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/noteBasic.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/userBasic.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/userBasic.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/userNote.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/userNote.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/router/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/router/app.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/loginService.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/loginService.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/noteService.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/noteService.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/uploadService.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/uploadService.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/userService.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/userService.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/publicService.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/publicService.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/gormTest.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/gormTest.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/treehole.exe" beforeDir="false" afterPath="$PROJECT_DIR$/treehole.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/jwt.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/req.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/req.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/resp.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/resp.go" afterDir="false" />
     </list>

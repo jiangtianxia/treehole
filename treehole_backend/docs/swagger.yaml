@@ -1,4 +1,14 @@
 definitions:
+  utils.CreateCommentFrom:
+    properties:
+      content:
+        type: string
+      note_identity:
+        type: string
+    required:
+    - content
+    - note_identity
+    type: object
   utils.CreateNoteForm:
     properties:
       content:
@@ -10,6 +20,16 @@ definitions:
     required:
     - content
     - title
+    type: object
+  utils.DeleteNoteCommentFrom:
+    properties:
+      comment_identity:
+        type: string
+      note_identity:
+        type: string
+    required:
+    - comment_identity
+    - note_identity
     type: object
   utils.GetNoteInfoFrom:
     properties:
@@ -38,6 +58,21 @@ definitions:
     - password
     - repassword
     - username
+    type: object
+  utils.ModifyNoteForm:
+    properties:
+      content:
+        type: string
+      note_identity:
+        type: string
+      title:
+        type: string
+      urls:
+        type: string
+    required:
+    - content
+    - note_identity
+    - title
     type: object
   utils.ModifyPasswordForm:
     properties:
@@ -117,6 +152,19 @@ definitions:
     - code
     - email
     type: object
+  utils.VotedNoteFrom:
+    properties:
+      flag:
+        type: string
+      note_identity:
+        type: string
+      voted:
+        type: string
+    required:
+    - flag
+    - note_identity
+    - voted
+    type: object
 info:
   contact: {}
 paths:
@@ -151,6 +199,111 @@ paths:
       summary: 验证验证码
       tags:
       - 登录业务接口
+  /comment/createComment:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: 发送参数
+        in: body
+        name: object
+        required: true
+        schema:
+          $ref: '#/definitions/utils.CreateCommentFrom'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/utils.H'
+      summary: 发送评论
+      tags:
+      - 评论业务接口
+  /comment/deleteNoteComment:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: 发送参数
+        in: body
+        name: object
+        required: true
+        schema:
+          $ref: '#/definitions/utils.DeleteNoteCommentFrom'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/utils.H'
+      summary: 删除评论
+      tags:
+      - 评论业务接口
+  /comment/getCommentList:
+    get:
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: page
+        in: query
+        name: page
+        type: integer
+      - description: size
+        in: query
+        name: size
+        type: integer
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/utils.H'
+      summary: 获取评论记录
+      tags:
+      - 评论业务接口
+  /comment/getNoteCommentList:
+    get:
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: page
+        in: query
+        name: page
+        type: integer
+      - description: size
+        in: query
+        name: size
+        type: integer
+      - description: node_identity
+        in: query
+        name: note_identity
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/utils.H'
+      summary: 获取帖子评论列表
+      tags:
+      - 评论业务接口
   /forgetPassword/modifyPassword:
     post:
       consumes:
@@ -198,27 +351,6 @@ paths:
       summary: 忘记密码-验证验证码
       tags:
       - 登录业务接口
-  /getNoteInfo:
-    post:
-      consumes:
-      - application/json
-      parameters:
-      - description: 发送参数
-        in: body
-        name: object
-        required: true
-        schema:
-          $ref: '#/definitions/utils.GetNoteInfoFrom'
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/utils.H'
-      summary: 获取帖子详细信息
-      tags:
-      - 公共接口
   /hello:
     get:
       responses:
@@ -302,6 +434,32 @@ paths:
       summary: 删除帖子
       tags:
       - 帖子业务接口
+  /note/getNoteInfo:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: 发送参数
+        in: body
+        name: object
+        required: true
+        schema:
+          $ref: '#/definitions/utils.GetNoteInfoFrom'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/utils.H'
+      summary: 获取帖子详细信息
+      tags:
+      - 帖子业务接口
   /note/getNoteList:
     get:
       parameters:
@@ -324,6 +482,58 @@ paths:
           schema:
             $ref: '#/definitions/utils.H'
       summary: 获取发布帖子列表
+      tags:
+      - 帖子业务接口
+  /note/modifyNote:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: 发送参数
+        in: body
+        name: object
+        required: true
+        schema:
+          $ref: '#/definitions/utils.ModifyNoteForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/utils.H'
+      summary: 修改帖子
+      tags:
+      - 帖子业务接口
+  /note/votedNote:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: 发送参数
+        in: body
+        name: object
+        required: true
+        schema:
+          $ref: '#/definitions/utils.VotedNoteFrom'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/utils.H'
+      summary: 点赞或踩帖子
       tags:
       - 帖子业务接口
   /register:

@@ -188,6 +188,13 @@ func CleanConnection(param interface{}) (result bool) {
 			fmt.Println("心跳超时..... 关闭连接：", node)
 			logger.SugarLogger.Info("心跳超时..... 关闭连接：", node)
 			node.Conn.Close()
+
+			// 删除redis，缓存信息
+			err := dao.RedisDeleteMessage(i)
+			if err != nil {
+				logger.SugarLogger.Error("删除缓存数据失败，err:", err.Error())
+			}
+			logger.SugarLogger.Info("删除缓存数据成功，identity", i)
 		}
 	}
 	return result

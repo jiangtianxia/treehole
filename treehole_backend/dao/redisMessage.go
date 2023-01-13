@@ -1,6 +1,7 @@
 package dao
 
 import (
+	"context"
 	"fmt"
 	"time"
 	"treehole/define"
@@ -110,5 +111,32 @@ func RedisSave(c *gin.Context, key string, info map[string]string) error {
 	_, err := pipeline.Exec(c)
 
 	fmt.Println(utils.RDB.HGetAll(c, key).Val())
+	return err
+}
+
+/**
+ * @Author jiang
+ * @Description 删除redis缓存
+ * @Date 23:00 2023/1/13
+ **/
+
+func RedisDeleteMessage(identity string) error {
+	// 1、拼接key
+	// listKey：treehole:online:list
+	// hashKey: treehole:online:hash:
+	ListKey := viper.GetString("redis.KeyWebsocketOnlineList")
+	HashKey := viper.GetString("redis.KeyWebsocketOnlineHashPrefix") + identity
+
+	var ctx = context.Background()
+	// 事务操作
+	pipeline := utils.RDB.TxPipeline()
+	// 2、在list前插数据
+	// lpush key value
+	pipeline.LRem(ctx, ListKey, 0, identity)
+
+	pipeline.Del(ctx, HashKey)
+
+	_, err := pipeline.Exec(ctx)
+
 	return err
 }

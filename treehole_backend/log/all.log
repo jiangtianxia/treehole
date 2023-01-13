@@ -613,3 +613,11 @@
 2023-01-13T20:56:54.145+0800	INFO	service/messageService.go:189	心跳超时..... 关闭连接：&{0xc000baa2c0 1673614414}
 2023-01-13T20:57:24.156+0800	INFO	service/messageService.go:200	心跳超时。。。自动下线&{0xc000baa2c0 1673614414}
 2023-01-13T20:57:24.156+0800	INFO	service/messageService.go:189	心跳超时..... 关闭连接：&{0xc000baa2c0 1673614414}
+2023-01-13T22:54:07.014+0800	INFO	treehole_backend/main.go:46	初始化配置完成
+2023-01-13T22:54:07.028+0800	INFO	treehole_backend/main.go:61	Timer inited ......
+2023-01-13T22:54:07.033+0800	INFO	treehole_backend/main.go:53	配置路由完成
+2023-01-13T22:55:40.061+0800	INFO	service/messageService.go:207	心跳超时。。。自动下线&{0xc00087a420 1673621696}
+2023-01-13T22:55:40.061+0800	INFO	service/messageService.go:189	心跳超时..... 关闭连接：&{0xc00087a420 1673621696}
+2023-01-13T22:55:40.062+0800	ERROR	service/messageService.go:98	Read Error:read tcp 127.0.0.1:8080->127.0.0.1:58459: use of closed network connection
+2023-01-13T22:55:40.062+0800	ERROR	service/messageService.go:63	Websocket Colse Error:close tcp 127.0.0.1:8080->127.0.0.1:58459: use of closed network connection
+2023-01-13T22:55:40.063+0800	INFO	service/messageService.go:197	删除缓存数据成功，identity48497715771926164

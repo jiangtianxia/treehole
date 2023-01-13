@@ -7,21 +7,18 @@
     <list default="true" id="bdf3baa8-4d08-40b0-aeac-7825acddd6f6" name="变更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/app.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/noteDao.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/noteDao.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/redisDao.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/redisDao.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/docs.go" beforeDir="false" afterPath="$PROJECT_DIR$/docs/docs.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/swagger.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/swagger.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/swagger.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/swagger.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/all.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/all.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/noteBasic.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/noteBasic.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/router/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/router/app.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/noteService.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/noteService.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/loginService.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/loginService.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/publicService.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/publicService.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/userService.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/userService.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/gormTest.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/gormTest.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/treehole.exe" beforeDir="false" afterPath="$PROJECT_DIR$/treehole.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/req.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/req.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/resp.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/resp.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload/48572509708150420/48892496482199188.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/jwt.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

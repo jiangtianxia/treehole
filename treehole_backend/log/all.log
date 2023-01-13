@@ -392,3 +392,224 @@
 2023-01-12T23:47:01.665+0800	INFO	treehole_backend/main.go:48	配置路由完成
 2023-01-12T23:47:46.123+0800	INFO	treehole_backend/main.go:44	初始化配置完成
 2023-01-12T23:47:46.124+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T10:53:16.466+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T10:53:16.546+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T11:22:36.065+0800	ERROR	service/commentService.go:44	Params InvalidContent为必填字段,
+2023-01-13T11:23:24.824+0800	ERROR	service/commentService.go:44	Params InvalidContent为必填字段,
+2023-01-13T11:23:50.041+0800	ERROR	service/commentService.go:44	Params InvalidContent为必填字段,
+2023-01-13T11:24:15.323+0800	ERROR	service/commentService.go:44	Params InvalidContent为必填字段,
+2023-01-13T12:29:31.044+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T12:29:31.064+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T13:27:23.813+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T13:27:23.875+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T13:55:31.723+0800	ERROR	service/messageService.go:84	Read json.Unmarshal Error:invalid character '"' after object key:value pair
+2023-01-13T13:57:07.346+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T13:57:07.350+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T13:57:18.978+0800	ERROR	service/messageService.go:85	Read json.Unmarshal Error:invalid character '"' after object key:value pair
+2023-01-13T13:58:51.880+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T13:58:51.882+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T13:59:02.281+0800	ERROR	service/messageService.go:85	Read json.Unmarshal Error:invalid character '"' after object key:value pair
+2023-01-13T14:03:44.029+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T14:03:44.031+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T14:26:03.401+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T14:26:03.453+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T14:26:29.026+0800	ERROR	service/messageService.go:85	Read json.Unmarshal Error:invalid character '"' after object key:value pair
+2023-01-13T14:29:37.726+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T14:29:37.727+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T14:32:04.699+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T14:32:04.701+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T14:32:28.583+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T14:32:28.589+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T14:32:39.982+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T14:32:40.065+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T14:35:12.537+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T14:35:12.538+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T14:35:23.498+0800	ERROR	service/messageService.go:85	Read json.Unmarshal Error:invalid character '"' after object key:value pair
+2023-01-13T14:49:33.815+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T14:49:33.844+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T14:49:46.271+0800	ERROR	service/messageService.go:79	Read Error:invalid character '"' after object key:value pair
+2023-01-13T14:55:58.738+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T14:55:58.741+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T14:56:08.159+0800	ERROR	service/messageService.go:87	Read json.Unmarshal Error:invalid character '"' after object key:value pair
+2023-01-13T14:56:51.479+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T14:56:51.535+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T14:57:37.594+0800	ERROR	service/messageService.go:87	Read json.Unmarshal Error:invalid character '"' after object key:value pair
+2023-01-13T14:59:17.725+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T14:59:17.726+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T14:59:23.423+0800	ERROR	service/messageService.go:87	Read json.Unmarshal Error:invalid character '"' after object key:value pair
+2023-01-13T14:59:32.982+0800	ERROR	service/messageService.go:87	Read json.Unmarshal Error:invalid character '"' after object key:value pair
+2023-01-13T15:00:10.343+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T15:00:10.347+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T15:00:15.693+0800	ERROR	service/messageService.go:87	Read json.Unmarshal Error:invalid character 'u' looking for beginning of object key string
+2023-01-13T15:02:04.547+0800	ERROR	service/messageService.go:87	Read json.Unmarshal Error:invalid character 'â' looking for beginning of object key string
+2023-01-13T15:02:48.586+0800	ERROR	service/messageService.go:87	Read json.Unmarshal Error:invalid character '"' after object key:value pair
+2023-01-13T15:04:14.725+0800	ERROR	service/messageService.go:87	Read json.Unmarshal Error:invalid character '"' after object key:value pair
+2023-01-13T15:04:15.203+0800	ERROR	service/messageService.go:87	Read json.Unmarshal Error:invalid character '"' after object key:value pair
+2023-01-13T15:08:22.553+0800	ERROR	service/commentService.go:300	GetNoteList Errorrecord not found
+2023-01-13T15:17:41.617+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T15:17:41.621+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T15:18:14.073+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T15:18:14.148+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T15:18:36.587+0800	ERROR	service/messageService.go:80	Read Error:websocket: close 1000 (normal)
+2023-01-13T15:23:45.425+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T15:23:45.425+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T15:24:13.337+0800	ERROR	service/messageService.go:98	Read json.Unmarshal Error:invalid character '"' after object key:value pair
+2023-01-13T15:37:28.544+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T15:37:28.549+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T15:56:59.594+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T15:56:59.639+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T16:03:07.359+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T16:03:07.362+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T16:04:12.531+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T16:04:12.586+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T16:05:17.213+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T16:05:17.215+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T16:05:24.677+0800	ERROR	service/messageService.go:80	Read Error:websocket: close 1000 (normal)
+2023-01-13T16:06:05.631+0800	ERROR	service/messageService.go:80	Read Error:websocket: close 1000 (normal)
+2023-01-13T16:06:14.449+0800	ERROR	service/messageService.go:96	Read Error:websocket: close 1000 (normal)
+2023-01-13T16:14:00.389+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T16:14:00.390+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T16:15:39.579+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T16:15:39.580+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T16:17:17.303+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T16:17:17.305+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T16:18:12.274+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T16:18:12.275+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T16:18:21.796+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T16:18:21.800+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T16:19:18.492+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T16:19:18.493+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T16:19:30.852+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T16:19:30.917+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T16:21:02.860+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T16:21:02.861+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T16:21:57.590+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T16:21:57.592+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T16:22:09.726+0800	ERROR	service/messageService.go:126	FindUserByIdentityCount Error: 
+2023-01-13T16:22:44.936+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T16:22:45.015+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T16:22:55.085+0800	ERROR	service/messageService.go:126	FindUserByIdentityCount Error: 
+2023-01-13T16:23:25.460+0800	ERROR	service/messageService.go:126	FindUserByIdentityCount Error: 
+2023-01-13T16:24:00.721+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T16:24:00.722+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T16:24:13.929+0800	ERROR	service/messageService.go:126	FindUserByIdentityCount Error: 
+2023-01-13T16:25:46.313+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T16:25:46.316+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T16:26:59.518+0800	ERROR	service/messageService.go:126	FindUserByIdentityCount Error: 
+2023-01-13T16:27:33.428+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T16:27:33.433+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T16:32:03.867+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T16:32:03.868+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T16:36:25.080+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T16:36:25.081+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T16:37:58.562+0800	ERROR	service/messageService.go:96	Read Error:websocket: close 1000 (normal)
+2023-01-13T16:39:20.122+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T16:39:20.160+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T16:40:37.480+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T16:40:37.481+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T16:41:50.965+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T16:41:50.968+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T16:43:22.745+0800	ERROR	service/messageService.go:127	FindUserByIdentityCount Error: 
+2023-01-13T16:46:49.725+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T16:46:49.727+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T17:04:48.391+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T17:04:48.393+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T17:06:02.944+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T17:06:02.946+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T17:06:54.149+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T17:06:54.150+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T17:08:49.694+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T17:08:49.697+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T17:12:15.997+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T17:12:16.000+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T17:14:10.241+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T17:14:10.243+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T17:26:52.467+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T17:26:52.467+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T17:28:28.720+0800	INFO	treehole_backend/main.go:44	初始化配置完成
+2023-01-13T17:28:28.721+0800	INFO	treehole_backend/main.go:48	配置路由完成
+2023-01-13T19:56:26.557+0800	INFO	treehole_backend/main.go:46	初始化配置完成
+2023-01-13T19:56:26.564+0800	INFO	treehole_backend/main.go:53	配置路由完成
+2023-01-13T19:59:03.524+0800	INFO	treehole_backend/main.go:46	初始化配置完成
+2023-01-13T19:59:03.558+0800	INFO	treehole_backend/main.go:61	Timer inited ......
+2023-01-13T19:59:03.558+0800	INFO	treehole_backend/main.go:53	配置路由完成
+2023-01-13T20:03:30.370+0800	INFO	treehole_backend/main.go:46	初始化配置完成
+2023-01-13T20:03:30.371+0800	INFO	treehole_backend/main.go:61	Timer inited ......
+2023-01-13T20:03:30.371+0800	INFO	treehole_backend/main.go:53	配置路由完成
+2023-01-13T20:04:04.739+0800	INFO	treehole_backend/main.go:46	初始化配置完成
+2023-01-13T20:04:04.739+0800	INFO	treehole_backend/main.go:61	Timer inited ......
+2023-01-13T20:04:04.740+0800	INFO	treehole_backend/main.go:53	配置路由完成
+2023-01-13T20:05:37.817+0800	INFO	service/messageService.go:270	心跳超时。。。自动下线&{0xc0000fe2c0 1673611484}
+2023-01-13T20:05:37.817+0800	INFO	service/messageService.go:259	心跳超时..... 关闭连接：&{0xc0000fe2c0 1673611484}
+2023-01-13T20:05:37.817+0800	ERROR	service/messageService.go:98	Read Error:read tcp 127.0.0.1:8080->127.0.0.1:55099: use of closed network connection
+2023-01-13T20:05:37.817+0800	ERROR	service/messageService.go:63	Websocket Colse Error:close tcp 127.0.0.1:8080->127.0.0.1:55099: use of closed network connection
+2023-01-13T20:06:07.820+0800	INFO	service/messageService.go:270	心跳超时。。。自动下线&{0xc0000fe2c0 1673611484}
+2023-01-13T20:06:07.820+0800	INFO	service/messageService.go:259	心跳超时..... 关闭连接：&{0xc0000fe2c0 1673611484}
+2023-01-13T20:06:37.830+0800	INFO	service/messageService.go:270	心跳超时。。。自动下线&{0xc0000fe2c0 1673611484}
+2023-01-13T20:06:37.830+0800	INFO	service/messageService.go:259	心跳超时..... 关闭连接：&{0xc0000fe2c0 1673611484}
+2023-01-13T20:07:07.840+0800	INFO	service/messageService.go:270	心跳超时。。。自动下线&{0xc0000fe2c0 1673611484}
+2023-01-13T20:07:07.840+0800	INFO	service/messageService.go:259	心跳超时..... 关闭连接：&{0xc0000fe2c0 1673611484}
+2023-01-13T20:07:37.840+0800	INFO	service/messageService.go:270	心跳超时。。。自动下线&{0xc0000fe2c0 1673611484}
+2023-01-13T20:07:37.840+0800	INFO	service/messageService.go:259	心跳超时..... 关闭连接：&{0xc0000fe2c0 1673611484}
+2023-01-13T20:08:07.850+0800	INFO	service/messageService.go:270	心跳超时。。。自动下线&{0xc0000fe2c0 1673611484}
+2023-01-13T20:08:07.850+0800	INFO	service/messageService.go:259	心跳超时..... 关闭连接：&{0xc0000fe2c0 1673611484}
+2023-01-13T20:08:37.852+0800	INFO	service/messageService.go:270	心跳超时。。。自动下线&{0xc0000fe2c0 1673611484}
+2023-01-13T20:08:37.852+0800	INFO	service/messageService.go:259	心跳超时..... 关闭连接：&{0xc0000fe2c0 1673611484}
+2023-01-13T20:09:07.865+0800	INFO	service/messageService.go:270	心跳超时。。。自动下线&{0xc0000fe2c0 1673611484}
+2023-01-13T20:09:07.865+0800	INFO	service/messageService.go:259	心跳超时..... 关闭连接：&{0xc0000fe2c0 1673611484}
+2023-01-13T20:09:37.879+0800	INFO	service/messageService.go:270	心跳超时。。。自动下线&{0xc0000fe2c0 1673611484}
+2023-01-13T20:09:37.880+0800	INFO	service/messageService.go:259	心跳超时..... 关闭连接：&{0xc0000fe2c0 1673611484}
+2023-01-13T20:10:37.899+0800	INFO	service/messageService.go:270	心跳超时。。。自动下线&{0xc0000fe420 1673611796}
+2023-01-13T20:10:37.899+0800	INFO	service/messageService.go:259	心跳超时..... 关闭连接：&{0xc0000fe420 1673611796}
+2023-01-13T20:10:37.899+0800	ERROR	service/messageService.go:98	Read Error:read tcp 127.0.0.1:8080->127.0.0.1:55181: use of closed network connection
+2023-01-13T20:10:37.899+0800	ERROR	service/messageService.go:63	Websocket Colse Error:close tcp 127.0.0.1:8080->127.0.0.1:55181: use of closed network connection
+2023-01-13T20:11:07.903+0800	INFO	service/messageService.go:270	心跳超时。。。自动下线&{0xc0000fe420 1673611796}
+2023-01-13T20:11:07.903+0800	INFO	service/messageService.go:259	心跳超时..... 关闭连接：&{0xc0000fe420 1673611796}
+2023-01-13T20:11:37.914+0800	INFO	service/messageService.go:270	心跳超时。。。自动下线&{0xc0000fe420 1673611796}
+2023-01-13T20:11:37.914+0800	INFO	service/messageService.go:259	心跳超时..... 关闭连接：&{0xc0000fe420 1673611796}
+2023-01-13T20:12:07.926+0800	INFO	service/messageService.go:270	心跳超时。。。自动下线&{0xc0000fe420 1673611796}
+2023-01-13T20:12:07.927+0800	INFO	service/messageService.go:259	心跳超时..... 关闭连接：&{0xc0000fe420 1673611796}
+2023-01-13T20:12:12.895+0800	ERROR	service/messageService.go:98	Read Error:websocket: close 1000 (normal)
+2023-01-13T20:12:59.144+0800	ERROR	service/messageService.go:98	Read Error:websocket: close 1000 (normal)
+2023-01-13T20:14:47.337+0800	INFO	treehole_backend/main.go:46	初始化配置完成
+2023-01-13T20:14:47.338+0800	INFO	treehole_backend/main.go:61	Timer inited ......
+2023-01-13T20:14:47.339+0800	INFO	treehole_backend/main.go:53	配置路由完成
+2023-01-13T20:15:36.993+0800	INFO	treehole_backend/main.go:46	初始化配置完成
+2023-01-13T20:15:36.994+0800	INFO	treehole_backend/main.go:61	Timer inited ......
+2023-01-13T20:15:36.996+0800	INFO	treehole_backend/main.go:53	配置路由完成
+2023-01-13T20:19:40.062+0800	INFO	treehole_backend/main.go:46	初始化配置完成
+2023-01-13T20:19:40.104+0800	INFO	treehole_backend/main.go:61	Timer inited ......
+2023-01-13T20:19:40.105+0800	INFO	treehole_backend/main.go:53	配置路由完成
+2023-01-13T20:20:26.195+0800	ERROR	middlewares/authUser.go:52	User Invalid&{48572509708150420 www /upload/48572509708150420/48890672949814932.jpeg { 1674022070  0 treehole 0 }}
+2023-01-13T20:22:31.494+0800	INFO	treehole_backend/main.go:46	初始化配置完成
+2023-01-13T20:22:31.536+0800	INFO	treehole_backend/main.go:61	Timer inited ......
+2023-01-13T20:22:31.536+0800	INFO	treehole_backend/main.go:53	配置路由完成
+2023-01-13T20:23:34.575+0800	INFO	service/messageService.go:268	心跳超时。。。自动下线&{0xc0028ce000 1673612557}
+2023-01-13T20:23:34.575+0800	INFO	service/messageService.go:257	心跳超时..... 关闭连接：&{0xc0028ce000 1673612557}
+2023-01-13T20:23:34.575+0800	ERROR	service/messageService.go:98	Read Error:read tcp 127.0.0.1:8080->127.0.0.1:59356: use of closed network connection
+2023-01-13T20:23:34.575+0800	ERROR	service/messageService.go:63	Websocket Colse Error:close tcp 127.0.0.1:8080->127.0.0.1:59356: use of closed network connection
+2023-01-13T20:24:04.591+0800	INFO	service/messageService.go:268	心跳超时。。。自动下线&{0xc0028ce000 1673612557}
+2023-01-13T20:24:04.591+0800	INFO	service/messageService.go:257	心跳超时..... 关闭连接：&{0xc0028ce000 1673612557}
+2023-01-13T20:24:04.591+0800	INFO	service/messageService.go:268	心跳超时。。。自动下线&{0xc002960160 1673612593}
+2023-01-13T20:24:04.591+0800	INFO	service/messageService.go:257	心跳超时..... 关闭连接：&{0xc002960160 1673612593}
+2023-01-13T20:24:04.591+0800	ERROR	service/messageService.go:98	Read Error:read tcp 127.0.0.1:8080->127.0.0.1:59375: use of closed network connection
+2023-01-13T20:24:04.591+0800	ERROR	service/messageService.go:63	Websocket Colse Error:close tcp 127.0.0.1:8080->127.0.0.1:59375: use of closed network connection
+2023-01-13T20:51:21.005+0800	INFO	treehole_backend/main.go:46	初始化配置完成
+2023-01-13T20:51:21.005+0800	INFO	treehole_backend/main.go:61	Timer inited ......
+2023-01-13T20:51:21.006+0800	INFO	treehole_backend/main.go:53	配置路由完成
+2023-01-13T20:54:24.111+0800	INFO	service/messageService.go:200	心跳超时。。。自动下线&{0xc000baa2c0 1673614414}
+2023-01-13T20:54:24.111+0800	INFO	service/messageService.go:189	心跳超时..... 关闭连接：&{0xc000baa2c0 1673614414}
+2023-01-13T20:54:24.111+0800	ERROR	service/messageService.go:98	Read Error:read tcp 127.0.0.1:8080->127.0.0.1:61118: use of closed network connection
+2023-01-13T20:54:24.111+0800	ERROR	service/messageService.go:63	Websocket Colse Error:close tcp 127.0.0.1:8080->127.0.0.1:61118: use of closed network connection
+2023-01-13T20:54:54.112+0800	INFO	service/messageService.go:200	心跳超时。。。自动下线&{0xc000baa2c0 1673614414}
+2023-01-13T20:54:54.112+0800	INFO	service/messageService.go:189	心跳超时..... 关闭连接：&{0xc000baa2c0 1673614414}
+2023-01-13T20:55:24.115+0800	INFO	service/messageService.go:200	心跳超时。。。自动下线&{0xc000baa2c0 1673614414}
+2023-01-13T20:55:24.116+0800	INFO	service/messageService.go:189	心跳超时..... 关闭连接：&{0xc000baa2c0 1673614414}
+2023-01-13T20:55:54.117+0800	INFO	service/messageService.go:200	心跳超时。。。自动下线&{0xc000baa2c0 1673614414}
+2023-01-13T20:55:54.117+0800	INFO	service/messageService.go:189	心跳超时..... 关闭连接：&{0xc000baa2c0 1673614414}
+2023-01-13T20:56:24.130+0800	INFO	service/messageService.go:200	心跳超时。。。自动下线&{0xc000baa2c0 1673614414}
+2023-01-13T20:56:24.131+0800	INFO	service/messageService.go:189	心跳超时..... 关闭连接：&{0xc000baa2c0 1673614414}
+2023-01-13T20:56:54.145+0800	INFO	service/messageService.go:200	心跳超时。。。自动下线&{0xc000baa2c0 1673614414}
+2023-01-13T20:56:54.145+0800	INFO	service/messageService.go:189	心跳超时..... 关闭连接：&{0xc000baa2c0 1673614414}
+2023-01-13T20:57:24.156+0800	INFO	service/messageService.go:200	心跳超时。。。自动下线&{0xc000baa2c0 1673614414}
+2023-01-13T20:57:24.156+0800	INFO	service/messageService.go:189	心跳超时..... 关闭连接：&{0xc000baa2c0 1673614414}

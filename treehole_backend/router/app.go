@@ -134,6 +134,21 @@ func Router() *gin.Engine {
 			// 删除评论记录
 			comment.POST("/deleteNoteComment", service.DeleteNoteComment)
 		}
+
+		/*
+		* 聊天室业务接口
+		 */
+		chat := v1.Group("chat", middlewares.AuthUserCheck())
+		{
+			// 进入聊天室建立聊天
+			chat.GET("/websocket/message", service.WebsocketMessage)
+
+			// 获取当前在线人数
+			chat.GET("/websocket/getOnlineList", service.GetOnlistList)
+
+			// 获取聊天记录
+			chat.GET("/websocket/getMessageList", service.GetMessageList)
+		}
 	}
 
 	return r

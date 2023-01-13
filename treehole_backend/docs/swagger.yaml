@@ -199,6 +199,54 @@ paths:
       summary: 验证验证码
       tags:
       - 登录业务接口
+  /chat/websocket/getMessageList:
+    get:
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: page
+        in: query
+        name: page
+        type: integer
+      - description: size
+        in: query
+        name: size
+        type: integer
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/utils.H'
+      summary: 获取聊天记录
+      tags:
+      - 聊天室接口
+  /chat/websocket/getOnlineList:
+    get:
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: page
+        in: query
+        name: page
+        type: integer
+      - description: size
+        in: query
+        name: size
+        type: integer
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/utils.H'
+      summary: 获取在线人数
+      tags:
+      - 聊天室接口
   /comment/createComment:
     post:
       consumes:

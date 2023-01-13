@@ -161,7 +161,7 @@ func Register(c *gin.Context) {
 	}
 
 	// 使用jwt生成token，返回
-	token, err := utils.GenerateToken(u.Identity, u.Username)
+	token, err := utils.GenerateToken(u.Identity, u.Username, "")
 	if err != nil {
 		logger.SugarLogger.Error("Generate Token Error:" + err.Error())
 		utils.RespFail(c, int(define.FailCode), "注册失败")
@@ -275,7 +275,7 @@ func Login(c *gin.Context) {
 	}
 
 	// 4、生成token返回
-	token, err := utils.GenerateToken(u.Identity, u.Username)
+	token, err := utils.GenerateToken(u.Identity, u.Username, u.Usericon)
 	if err != nil {
 		logger.SugarLogger.Error("Generate Token Error:" + err.Error())
 		utils.RespFail(c, int(define.FailCode), "登录失败")
@@ -346,7 +346,7 @@ func VerifyEmailCode(c *gin.Context) {
 	}
 
 	// 4、生成token并返回
-	token, err := utils.GenerateToken(u.Identity, u.Username)
+	token, err := utils.GenerateToken(u.Identity, u.Username, u.Usericon)
 	if err != nil {
 		logger.SugarLogger.Error("Generate Token Error:" + err.Error())
 		utils.RespFail(c, int(define.FailCode), "验证失败")
@@ -426,7 +426,7 @@ func ModifyPassword(c *gin.Context) {
 	}
 
 	// 4、生成token并返回
-	token, err := utils.GenerateToken(newUser.Identity, newUser.Username)
+	token, err := utils.GenerateToken(newUser.Identity, newUser.Username, modify.Usericon)
 	if err != nil {
 		logger.SugarLogger.Error("Generate Token Error:" + err.Error())
 		utils.RespFail(c, int(define.FailCode), "修改失败")

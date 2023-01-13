@@ -25,6 +25,10 @@ redis:
     KeyNoteInfoHashPrefix: "treehole:noteinfo:"
     KeyCommentListPrefix: "treehole:comment:list:"
     KeyCommentHashPrefix: "treehole:comment:hash:"
+    KeyWebsocketOnlineList: "treehole:online:list"
+    KeyWebsocketOnlineHashPrefix: "treehole:online:hash:"
+    KeyWebsocketMessageList: "treehole:message:list"
+    KeyWebsocketMessageHashPrefix: "treehole:message:hash:"
     
 
 md5:
@@ -41,3 +45,8 @@ currentLimit:
     tokenBucket:
         rate:   1000
         capacity: 5000
+
+timeout:
+  HeartbeatHz: 30   #每隔多少秒心跳时间   
+  HeartbeatMaxTime: 30  #最大心跳时间  ，超过此就下线 
+  DelayHeartbeat: 3   #延迟心跳时间  单位秒

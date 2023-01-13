@@ -64,6 +64,80 @@ const docTemplate = `{
                 }
             }
         },
+        "/chat/websocket/getMessageList": {
+            "get": {
+                "tags": [
+                    "聊天室接口"
+                ],
+                "summary": "获取聊天记录",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "page",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "size",
+                        "name": "size",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/utils.H"
+                        }
+                    }
+                }
+            }
+        },
+        "/chat/websocket/getOnlineList": {
+            "get": {
+                "tags": [
+                    "聊天室接口"
+                ],
+                "summary": "获取在线人数",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Authorization",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "page",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "size",
+                        "name": "size",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/utils.H"
+                        }
+                    }
+                }
+            }
+        },
         "/comment/createComment": {
             "post": {
                 "consumes": [

@@ -32,7 +32,7 @@ func SearchNotes(c *gin.Context) {
 	// 2、查询信息
 	tx := dao.SearchNotes(keyword)
 	list := []*models.NoteBasic{}
-	err := tx.Count(&count).Omit("content").Offset(page).Limit(size).Find(&list).Error
+	err := tx.Count(&count).Offset(page).Limit(size).Find(&list).Error
 	if err != nil {
 		logger.SugarLogger.Error("Search Notes Error:" + err.Error())
 		utils.RespFail(c, int(define.FailCode), "查询失败")

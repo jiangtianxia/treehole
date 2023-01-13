@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
+	"time"
 	"treehole/logger"
 	"treehole/router"
+	"treehole/service"
 	"treehole/utils"
 
 	"github.com/spf13/viper"
@@ -43,8 +45,18 @@ func main() {
 	utils.InitCurrentLimit()
 	logger.SugarLogger.Info("初始化配置完成")
 
+	// 初始化定时任务
+	InitTimer()
+
 	// 配置路由
 	r := router.Router()
 	logger.SugarLogger.Info("配置路由完成")
-	r.Run("127.0.0.1:8081")
+	r.Run("127.0.0.1:8080")
+}
+
+// 初始化定时任务
+func InitTimer() {
+	utils.Timer(time.Second*viper.GetDuration("timeout.DelayHeartbeat"), time.Second*time.Duration(viper.GetInt("timeout.HeartbeatHz")), service.CleanConnection, "")
+	fmt.Println("Timer inited ...... ")
+	logger.SugarLogger.Info("Timer inited ......")
 }

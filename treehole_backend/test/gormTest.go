@@ -19,5 +19,6 @@ func main() {
 	// db.AutoMigrate(&models.NoteBasic{})
 	// db.AutoMigrate(&models.UserNote{})
 	// db.AutoMigrate(&models.VotedNote{})
-	db.AutoMigrate(&models.CommentNote{})
+	// db.AutoMigrate(&models.CommentNote{})
+	db.AutoMigrate(&models.MessageBasic{})
 }

@@ -1,6 +1,7 @@
 package service
 
 import (
+	"fmt"
 	"strconv"
 	"time"
 	"treehole/dao"
@@ -267,10 +268,21 @@ func Login(c *gin.Context) {
 		return
 	}
 
+	// 判断用户是否已经在一分钟登录了5次
+	flag, Minutes := dao.ExceLoginBank(c, u.Identity)
+	if flag {
+		utils.RespFail(c, int(define.FailCode), fmt.Sprint("1分钟内连续登录失败5次，账号被锁10分钟，请", int(Minutes), "分钟后重试"))
+		return
+	}
+
 	// 3、判断密码是否正确
 	if !utils.ValidPassword(user.Password, u.Password) {
+
+		// 密码不正确
+		dao.AddLoginError(c, u.Identity)
+
 		logger.SugarLogger.Error("Invalid Password")
-		utils.RespFail(c, int(define.InvalidPasswordCode), define.InvalidPasswordCode.Msg())
+		utils.RespFail(c, int(define.InvalidPasswordCode), "密码不正确，1分钟内连续登录失败5次，该账号将会被锁10分钟")
 		return
 	}
 

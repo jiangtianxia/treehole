@@ -6,6 +6,7 @@ require github.com/spf13/viper v1.14.0
 
 require (
 	github.com/asaskevich/govalidator v0.0.0-20210307081110-f21760c49a8d // indirect
+	github.com/bits-and-blooms/bitset v1.4.0 // indirect
 	github.com/bwmarrin/snowflake v0.3.0 // indirect
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
 	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0 // indirect

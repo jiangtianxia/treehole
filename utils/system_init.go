@@ -2,15 +2,12 @@ package utils
 
 import (
 	"fmt"
-	"log"
-	"os"
 	"time"
 
 	"github.com/go-redis/redis/v9"
 	"github.com/spf13/viper"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
-	"gorm.io/gorm/logger"
 )
 
 /**
@@ -19,15 +16,16 @@ import (
  * @Date 11:00 2023/1/8
  **/
 func InitConfig() {
-	// 获取当前工作目录
-	work, _ := os.Getwd()
+	// // 获取当前工作目录
+	// work, _ := os.Getwd()
 
 	// 设置文件名，文件后缀默认为yml
 	// app为config下的名字
 	viper.SetConfigName("app")
 
-	// 配置文件所在的文件夹
-	viper.AddConfigPath(work + "/config")
+	// // 配置文件所在的文件夹
+	// viper.AddConfigPath(work + "/config")
+	viper.AddConfigPath("/build/config")
 	err := viper.ReadInConfig()
 	if err != nil {
 		fmt.Println(err)
@@ -52,21 +50,24 @@ func InitMysql() {
 	// os.Stdout 标准输出，控制台打印
 	// 以\r\n来作为打印间隔
 	// log.LastFlags 前面这串：2022/12/30 12:00
-	newLogger := logger.New(
-		log.New(os.Stdout, "\r\n", log.LstdFlags),
-		logger.Config{
-			SlowThreshold: time.Second, // 慢SQL阈值，超过1秒的sql查询会被记录到日志中
-			LogLevel:      logger.Info, // 级别
-			Colorful:      true,        // 彩色
-		},
-	)
+	// newLogger := logger.New(
+	// 	log.New(os.Stdout, "\r\n", log.LstdFlags),
+	// 	logger.Config{
+	// 		SlowThreshold: time.Second, // 慢SQL阈值，超过1秒的sql查询会被记录到日志中
+	// 		LogLevel:      logger.Info, // 级别
+	// 		Colorful:      true,        // 彩色
+	// 	},
+	// )
 
+	// 先睡眠半分钟再连接，防止mysql还未启动
+	time.Sleep(time.Second * 30)
 	dns := viper.GetString("mysql.username") + ":" +
 		viper.GetString("mysql.password") + "@tcp(" + viper.GetString("mysql.addr") + ":" +
 		viper.GetString("mysql.port") + ")/" +
 		viper.GetString("mysql.database") + viper.GetString("mysql.base")
+
 	DB, _ = gorm.Open(mysql.Open(dns),
-		&gorm.Config{Logger: newLogger})
+		&gorm.Config{})
 
 	sqlDB, err := DB.DB()
 	if err != nil {

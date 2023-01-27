@@ -16,6 +16,9 @@ import (
 func Router() *gin.Engine {
 	r := gin.Default()
 
+	// 设置成发布模式
+	gin.SetMode(gin.ReleaseMode)
+
 	// swagger 配置
 	docs.SwaggerInfo.BasePath = "/api/v1"
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))

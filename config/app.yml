@@ -6,16 +6,16 @@ logger:
 
 
 mysql:
-    username: "test"
-    password: "1357924680"
-    addr: "106.55.183.44"
+    username: "root"
+    password: "124578"
+    addr: "127.0.0.1"
     port: "3306"
     database: "treehole"
     base: "?charset=utf8mb4&parseTime=True&loc=Local"
 
 redis:
-    addr: "106.55.183.44:6379"
-    password: "579021"
+    addr: "127.0.0.1:6379"
+    password: "124578"
     DB: 0
     poolSize: 1000
     minIdleConn: 10000
